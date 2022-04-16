@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app3/widgets/user_profile.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -6,7 +7,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Text('Hello world'),
+      home: UserProfile(),
     );
   }
 }
