@@ -1,28 +1,48 @@
 import 'package:flutter/material.dart';
 
 class UserProfile extends StatelessWidget {
-  const UserProfile({Key? key}) : super(key: key);
+  List<MenuRowData> firstMenuRow = [
+    MenuRowData(Icons.favorite, "Обране"),
+    MenuRowData(Icons.call, "Дзвінки"),
+    MenuRowData(Icons.computer, "Прилади"),
+    MenuRowData(Icons.folder, "Папка з чатами")
+  ];
+  List<MenuRowData> secondMenuRow = [
+    MenuRowData(Icons.notifications, "Cповіщення"),
+    MenuRowData(Icons.privacy_tip, "Конфидентсалність"),
+    MenuRowData(Icons.date_range, "Данні та память"),
+    MenuRowData(Icons.brush, "Оформлення"),
+    MenuRowData(Icons.language, "Мова")
+  ];
+
+  UserProfile();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
         title: Text('Налаштування'),
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: Colors.grey,
       ),
-      body: Container(
-        color: Colors.green,
-        //maximum allowable width
-        width: double.infinity,
-        child: Column(
-          //column in center
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _UserInfo(),
-            SizedBox(height: 15),
-            _MenuWidget(),
-          ],
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.blueGrey,
+          //maximum allowable width
+          width: double.infinity,
+
+          child: Column(
+            //column in center
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              _UserInfo(),
+              SizedBox(height: 25),
+              _MenuWidget(menuRow: firstMenuRow),
+              SizedBox(height: 25),
+              _MenuWidget(menuRow: secondMenuRow),
+            ],
+          ),
         ),
       ),
     );
@@ -39,7 +59,7 @@ class _UserNickNameWiget extends StatelessWidget {
     return Text(
       'vlad_shepa',
       style: TextStyle(
-        color: Colors.grey,
+        color: Colors.white70,
         fontSize: 16,
         fontWeight: FontWeight.w500,
       ),
@@ -57,7 +77,7 @@ class _UserPhoneWiget extends StatelessWidget {
     return Text(
       '+380688110424',
       style: TextStyle(
-        color: Colors.grey,
+        color: Colors.white70,
         fontSize: 15,
         fontWeight: FontWeight.w500,
       ),
@@ -111,8 +131,17 @@ class _UserInfo extends StatelessWidget {
   }
 }
 
+class MenuRowData {
+  final IconData icon;
+  final String text;
+
+  MenuRowData(this.icon, this.text);
+}
+
 class _MenuWidget extends StatelessWidget {
-  const _MenuWidget({Key? key}) : super(key: key);
+  final List<MenuRowData> menuRow;
+
+  const _MenuWidget({Key? key, required this.menuRow}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -122,43 +151,35 @@ class _MenuWidget extends StatelessWidget {
       //padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       //width: double.infinity,
       child: Column(
+        children: menuRow.map((data) => _MenuWigetsRows(data: data)).toList(),
+      ),
+    );
+  }
+}
+
+class _MenuWigetsRows extends StatelessWidget {
+  final MenuRowData data;
+
+  const _MenuWigetsRows({
+    Key? key,
+    required this.data,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      child: Row(
         children: [
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            child: Row(
-              children: [
-                Icon(Icons.favorite_outline),
-                SizedBox(width: 15),
-                Expanded(
-                    child: Text("Обране",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 17,
-                        )
-                    )
-                ),
-                Icon(Icons.chevron_right_sharp)
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-            child: Row(
-              children: [
-                Icon(Icons.call),
-                SizedBox(width: 15),
-                Expanded(
-                    child: Text("Дзвінки",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 17,
-                        )
-                    )
-                ),
-                Icon(Icons.chevron_right_sharp)
-              ],
-            ),
-          ),
+          Icon(data.icon),
+          SizedBox(width: 15),
+          Expanded(
+              child: Text(data.text,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 17,
+                  ))),
+          Icon(Icons.chevron_right_sharp)
         ],
       ),
     );
@@ -175,7 +196,13 @@ class _AvatarWiget extends StatelessWidget {
     return Container(
       width: 100,
       height: 100,
-      child: Placeholder(),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(100),
+        child: Image(
+          image: AssetImage(
+              'assets/image/bb9f8b136eb644c92a08fa3f7637c03bYp9UjK_800.jpg'),
+        ),
+      ),
     );
   }
 }
