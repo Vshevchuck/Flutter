@@ -14,37 +14,76 @@ class UserProfile extends StatelessWidget {
             child: Text(
               'Center',
               style: GoogleFonts.lato(
-                  fontSize: 20,
+                  fontSize: 30,
                   fontWeight: FontWeight.w600,
                   color: Colors.black),
             ),
           )),
       body: SingleChildScrollView(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(30),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Container(
-            color: Colors.blue,
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(25),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  blurRadius: 8,
+                  offset: Offset(2,5), // Shado
+                ),
+              ],
+            ),
+
             //maximum allowable width
             //width: double.infinity,
             child: Row(
               children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    child: Image(
-                      image: AssetImage(
-                          'assets/image/bb9f8b136eb644c92a08fa3f7637c03bYp9UjK_800.jpg'),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(100),
+                      border: Border.all(width: 2.5, color: Colors.white),
+                    ),
+                    width: 60,
+                    height: 60,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(100),
+                      child: Image(
+                        image: AssetImage(
+                            'assets/image/bb9f8b136eb644c92a08fa3f7637c03bYp9UjK_800.jpg'),
+                      ),
                     ),
                   ),
                 ),
-                Text(
-                  'Vladislav ShevchucK',
-                  style: GoogleFonts.lato(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white),
+                //padding: const EdgeInsets.all(8.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        'Vladislav Shevchuck',
+                        style: GoogleFonts.lato(
+                            fontSize: 19,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Text(
+                      'mobile app developer',
+                      style: GoogleFonts.lato(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white54),
+                    )
+                  ],
+                ),
+                Container(
+                    //add_rounded
+                  padding: EdgeInsets.only(bottom: 25, left: 10),
+                  child: Icon(Icons.privacy_tip,color:Colors.white ,size : 20)
                 ),
               ],
             ),
