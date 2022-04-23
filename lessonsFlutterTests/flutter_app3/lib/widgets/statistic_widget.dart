@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+
+final amountTextStyle = TextStyle(color: Colors.white, fontSize: 17);
+final textTextStyle = TextStyle(
+    color: Colors.white70,
+    fontSize: 10,
+    fontWeight: FontWeight.w400);
+
 class InfoStatisticWidget extends StatelessWidget {
   final List<ElementOfStatistics> StatisticColoumn;
 
@@ -13,7 +20,8 @@ class InfoStatisticWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.end,
-        children:StatisticColoumn.map((data) => _StatisticWidgetColumn(data: data))
+        children:
+        StatisticColoumn.map((data) => _StatisticWidgetColumn(data: data))
             .toList(),
       ),
     );
@@ -30,7 +38,8 @@ class ElementOfStatistics {
 class _StatisticWidgetColumn extends StatelessWidget {
   final ElementOfStatistics data;
 
-  const _StatisticWidgetColumn({Key? key, required this.data}) : super(key: key);
+  const _StatisticWidgetColumn({Key? key, required this.data})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -38,17 +47,13 @@ class _StatisticWidgetColumn extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       child: Column(
         children: [
-          Text(data.amount.toString(),
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 17,
-              )),
+          Text(
+            data.amount.toString(),
+            style: amountTextStyle,
+          ),
           SizedBox(width: 15),
           Text(data.text,
-              style: TextStyle(
-                  color: Colors.white70,
-                  fontSize: 10,
-                  fontWeight: FontWeight.w400)),
+              style:textTextStyle),
         ],
       ),
     );

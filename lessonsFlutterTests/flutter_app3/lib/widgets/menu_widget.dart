@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+final headingTextStyle =
+TextStyle(fontWeight: FontWeight.w600, color: Colors.black87, fontSize: 17);
+
+final descriptionTextStyle = TextStyle(
+  fontWeight: FontWeight.w400,
+  color: Colors.black26,
+  fontSize: 13,
+);
+
 class MenuWidget extends StatelessWidget {
   final List<ElementOfMenu> menuWidgetColumn;
 
@@ -76,24 +85,17 @@ class _MenuWidgetColumn extends StatelessWidget {
                 children: [
                   Text(
                     data.text2,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                      fontSize: 17,
-                    ),
+                    style: headingTextStyle,
                   ),
                   Text(
-                    data.text,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black26,
-                      fontSize: 13,
-                    ),
+                      data.text,
+                      style : descriptionTextStyle
                   ),
                 ],
               ),
               Expanded(child: Text(" ")),
-              Icon(Icons.arrow_forward_ios_outlined, color: Colors.black26,size:16)
+              Icon(Icons.arrow_forward_ios_outlined,
+                  color: Colors.black26, size: 16)
             ],
           ),
         ),

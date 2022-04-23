@@ -4,6 +4,15 @@ import 'package:flutter_app3/widgets/statistic_widget.dart';
 import 'package:flutter_app3/widgets/functional_widget.dart';
 import 'package:flutter_app3/widgets/menu_widget.dart';
 
+final scafoldTextStyle = GoogleFonts.lato(
+    fontSize: 30, fontWeight: FontWeight.w600, color: Colors.black);
+
+final nameTextStyle = GoogleFonts.lato(
+    fontSize: 19, fontWeight: FontWeight.w600, color: Colors.white);
+
+final specialityTextStyle = GoogleFonts.lato(
+fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white54);
+
 class UserProfile extends StatelessWidget {
   List<ElementOfStatistics> elements = [
     ElementOfStatistics(846, "Collect"),
@@ -18,14 +27,14 @@ class UserProfile extends StatelessWidget {
     ElementOfFunctional(Icons.wallet_giftcard, "Service")
   ];
   List<ElementOfMenu> elementsMenu = [
-    ElementOfMenu("Address","ensure you having adress",
-        Icons.add_location,Colors.deepPurpleAccent),
-    ElementOfMenu("Privacy","system premision change",
-        Icons.vpn_key_rounded,Colors.purpleAccent),
-    ElementOfMenu("General","basic functional setting",
-    Icons.apps_sharp,Colors.orangeAccent),
-    ElementOfMenu("Notifications","take over the new in time",
-    Icons.warning,Colors.lightBlueAccent)
+    ElementOfMenu("Address", "ensure you having adress", Icons.add_location,
+        Colors.deepPurpleAccent),
+    ElementOfMenu("Privacy", "system premision change", Icons.vpn_key_rounded,
+        Colors.purpleAccent),
+    ElementOfMenu("General", "basic functional setting", Icons.apps_sharp,
+        Colors.orangeAccent),
+    ElementOfMenu("Notifications", "take over the new in time", Icons.warning,
+        Colors.lightBlueAccent)
   ];
 
   @override
@@ -39,51 +48,76 @@ class UserProfile extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'Center',
-              style: GoogleFonts.lato(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black),
+              style: scafoldTextStyle,
             ),
           )),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(25),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 8,
-                      offset: Offset(2, 5), // Shado
-                    ),
-                  ],
-                ),
-                //maximum allowable width
-                //width: double.infinity,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        _UserPhotoWidget(),
-                        //padding: const EdgeInsets.all(8.0),
-                        _UserInfoWidget(),
-                        _UserSecurityWidget(),
-                      ],
-                    ),
-                    InfoStatisticWidget(StatisticColoumn: elements),
-                  ],
-                ),
-              ),
-            ),
-            FunctionalWidget(FunctionalRow:elementsFunc),
-            MenuWidget(menuWidgetColumn:elementsMenu),
+            _BlueContainerWithUserInfoWidget(elements: elements),
+            FunctionalWidget(FunctionalRow: elementsFunc),
+            MenuWidget(menuWidgetColumn: elementsMenu),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _BlueContainerWithUserInfoWidget extends StatelessWidget {
+  const _BlueContainerWithUserInfoWidget({
+    Key? key,
+    required this.elements,
+  }) : super(key: key);
+
+  final List<ElementOfStatistics> elements;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(25),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              blurRadius: 8,
+              offset: Offset(2, 5), // Shado
+            ),
+          ],
+        ),
+        //width: double.infinity,
+        child: _UserPartWidget(elements: elements),
+      ),
+    );
+  }
+}
+
+class _UserPartWidget extends StatelessWidget {
+  const _UserPartWidget({
+    Key? key,
+    required this.elements,
+  }) : super(key: key);
+
+  final List<ElementOfStatistics> elements;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            _UserPhotoWidget(),
+            //padding: const EdgeInsets.all(8.0),
+            _UserInfoWidget(),
+            _UserSecurityWidget(),
+          ],
+        ),
+        InfoStatisticWidget(StatisticColoumn: elements),
+      ],
     );
   }
 }
@@ -96,9 +130,9 @@ class _UserSecurityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //add_rounded
-        padding: EdgeInsets.only(bottom: 25, left: 10),
-        child: Icon(Icons.privacy_tip, color: Colors.white, size: 20));
+        //add_rounded
+        padding: EdgeInsets.only(bottom: 25, left: 7),
+        child: Icon(Icons.privacy_tip, color: Colors.white, size: 18));
   }
 }
 
@@ -116,21 +150,17 @@ class _UserInfoWidget extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 10),
           child: Text(
             'Vladislav Shevchuck',
-            style: GoogleFonts.lato(
-                fontSize: 19, fontWeight: FontWeight.w600, color: Colors.white),
+            style: nameTextStyle,
           ),
         ),
         Text(
           'mobile app developer',
-          style: GoogleFonts.lato(
-              fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white54),
+          style: specialityTextStyle,
         )
       ],
     );
   }
 }
-
-
 
 class _UserPhotoWidget extends StatelessWidget {
   const _UserPhotoWidget({
