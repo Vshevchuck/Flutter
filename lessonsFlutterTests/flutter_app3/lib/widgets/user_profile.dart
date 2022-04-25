@@ -11,7 +11,7 @@ final nameTextStyle = GoogleFonts.lato(
     fontSize: 19, fontWeight: FontWeight.w600, color: Colors.white);
 
 final specialityTextStyle = GoogleFonts.lato(
-fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white54);
+    fontSize: 12, fontWeight: FontWeight.w400, color: Colors.white54);
 
 class UserProfile extends StatelessWidget {
   List<ElementOfStatistics> elements = [
@@ -89,7 +89,6 @@ class _BlueContainerWithUserInfoWidget extends StatelessWidget {
             ),
           ],
         ),
-        //width: double.infinity,
         child: _UserPartWidget(elements: elements),
       ),
     );
@@ -108,13 +107,18 @@ class _UserPartWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            _UserPhotoWidget(),
-            //padding: const EdgeInsets.all(8.0),
-            _UserInfoWidget(),
-            _UserSecurityWidget(),
-          ],
+        Container(
+          alignment: Alignment.centerLeft,
+          child: FittedBox(
+            child: Row(
+              children: [
+                _UserPhotoWidget(),
+                //padding: const EdgeInsets.all(8.0),
+                _UserInfoWidget(),
+                _UserSecurityWidget(),
+              ],
+            ),
+          ),
         ),
         InfoStatisticWidget(StatisticColoumn: elements),
       ],
@@ -130,9 +134,9 @@ class _UserSecurityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        //add_rounded
         padding: EdgeInsets.only(bottom: 25, left: 7),
-        child: Icon(Icons.privacy_tip, color: Colors.white, size: 18));
+          child: Icon(Icons.privacy_tip, color: Colors.white, size: 18));
+
   }
 }
 

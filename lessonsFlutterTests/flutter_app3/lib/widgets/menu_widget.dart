@@ -18,8 +18,7 @@ class MenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      //padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      //width: double.infinity,
+      padding: const EdgeInsets.only(left: 10.0,right: 15.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.end,
@@ -48,7 +47,7 @@ class _MenuWidgetColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,

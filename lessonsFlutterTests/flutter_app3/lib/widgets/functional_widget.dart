@@ -21,18 +21,14 @@ class FunctionalWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.5, bottom: 8),
-      child: Container(
-        //padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        //width: double.infinity,
+      padding: const EdgeInsets.only(top: 8.5, bottom: 8,left: 15.0,right: 15.0),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: FunctionalRow.map((data) =>
               _FunctionalWigetColumn(data: data))
               .toList(),
         ),
-      ),
     );
   }
 }
@@ -46,8 +42,7 @@ class _FunctionalWigetColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      // ignore: prefer_const_constructors
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: Column(
         children: [
           Container(
