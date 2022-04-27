@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b5bb93-3155-4efc-b872-88d3a2ebb83c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/lesson_1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="29b5bb93-3155-4efc-b872-88d3a2ebb83c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +40,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../lessonsFlutterTests/flutter_app3" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -76,6 +89,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="513" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1651075570573" />
+    <state width="1286" height="175" key="GridCell.Tab.0.bottom" timestamp="1651076249469">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="175" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1651076249469" />
+    <state width="1286" height="175" key="GridCell.Tab.0.center" timestamp="1651076249468">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="175" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1651076249468" />
+    <state width="1286" height="175" key="GridCell.Tab.0.left" timestamp="1651076249467">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="175" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1651076249467" />
+    <state width="1286" height="175" key="GridCell.Tab.0.right" timestamp="1651076249468">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="175" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1651076249468" />
     <state x="242" y="17" key="SettingsEditor" timestamp="1651075603880">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
