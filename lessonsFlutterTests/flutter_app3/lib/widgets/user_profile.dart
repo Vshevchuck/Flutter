@@ -37,6 +37,8 @@ class UserProfile extends StatelessWidget {
         Colors.lightBlueAccent)
   ];
 
+  UserProfile({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +58,7 @@ class UserProfile extends StatelessWidget {
         child: Column(
           children: [
             _BlueContainerWithUserInfoWidget(elements: elements),
-            FunctionalWidget(FunctionalRow: elementsFunc),
+            FunctionalWidget(functionalRow: elementsFunc),
             MenuWidget(menuWidgetColumn: elementsMenu),
           ],
         ),
@@ -81,7 +83,7 @@ class _BlueContainerWithUserInfoWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.blue,
           borderRadius: BorderRadius.circular(25),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.grey,
               blurRadius: 8,
@@ -111,16 +113,15 @@ class _UserPartWidget extends StatelessWidget {
           alignment: Alignment.centerLeft,
           child: FittedBox(
             child: Row(
-              children: [
+              children: const [
                 _UserPhotoWidget(),
-                //padding: const EdgeInsets.all(8.0),
                 _UserInfoWidget(),
                 _UserSecurityWidget(),
               ],
             ),
           ),
         ),
-        InfoStatisticWidget(StatisticColoumn: elements),
+        InfoStatisticWidget(statisticColoumn: elements),
       ],
     );
   }
@@ -134,8 +135,8 @@ class _UserSecurityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(bottom: 25, left: 7),
-          child: Icon(Icons.privacy_tip, color: Colors.white, size: 18));
+        padding: const EdgeInsets.only(bottom: 25, left: 7),
+          child: const Icon(Icons.privacy_tip, color: Colors.white, size: 18));
 
   }
 }
@@ -184,7 +185,7 @@ class _UserPhotoWidget extends StatelessWidget {
         height: 65,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100),
-          child: Image(
+          child: const Image(
             image: AssetImage(
                 'assets/image/bb9f8b136eb644c92a08fa3f7637c03bYp9UjK_800.jpg'),
           ),

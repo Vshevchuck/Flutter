@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-final headingTextStyle =
+const headingTextStyle =
 TextStyle(fontWeight: FontWeight.w600, color: Colors.black87, fontSize: 17);
 
-final descriptionTextStyle = TextStyle(
+const descriptionTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   color: Colors.black26,
   fontSize: 13,
@@ -53,7 +53,7 @@ class _MenuWidgetColumn extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
           border: Border.all(width: 1, color: Colors.white),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black26,
               blurRadius: 2,
@@ -92,8 +92,8 @@ class _MenuWidgetColumn extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(child: Text(" ")),
-              Icon(Icons.arrow_forward_ios_outlined,
+              const Expanded(child: Text(" ")),
+              const Icon(Icons.arrow_forward_ios_outlined,
                   color: Colors.black26, size: 16)
             ],
           ),

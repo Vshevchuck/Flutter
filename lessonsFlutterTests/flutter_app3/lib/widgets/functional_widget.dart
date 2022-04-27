@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final textStyle = TextStyle(
+const textStyle = TextStyle(
     color: Colors.black45,
     fontSize: 12,
     fontWeight: FontWeight.w400);
@@ -13,9 +13,9 @@ class ElementOfFunctional {
 }
 
 class FunctionalWidget extends StatelessWidget {
-  final List<ElementOfFunctional> FunctionalRow;
+  final List<ElementOfFunctional> functionalRow;
 
-  const FunctionalWidget({Key? key, required this.FunctionalRow})
+  const FunctionalWidget({Key? key, required this.functionalRow})
       : super(key: key);
 
   @override
@@ -25,7 +25,7 @@ class FunctionalWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
-          children: FunctionalRow.map((data) =>
+          children: functionalRow.map((data) =>
               _FunctionalWigetColumn(data: data))
               .toList(),
         ),
@@ -42,7 +42,7 @@ class _FunctionalWigetColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
       child: Column(
         children: [
           Container(
@@ -54,7 +54,7 @@ class _FunctionalWigetColumn extends StatelessWidget {
               ),
               child: Icon(data.icon, color: Colors.black54,)
           ),
-          SizedBox(height: 2),
+          const SizedBox(height: 2),
           Text(data.text,
               style:textStyle),
         ],
