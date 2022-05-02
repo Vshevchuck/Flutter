@@ -4,6 +4,7 @@ import 'package:flutter_app3/images/images_name.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_app3/widgets/catalog_widget.dart';
 import 'package:flutter_app3/widgets/head_widget.dart';
+import 'package:flutter_app3/mechanics/counting.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);
@@ -29,15 +30,15 @@ class _MainPageState extends State<MainPage> {
               child: Container(
                 width: double.infinity,
                 height: 110,
-                child: HeadWidget(amount,total),
+                child: HeadWidget(),
               ),
             ),
             CatalogWidget(),
             GestureDetector(
               onTap: () {
                 setState(() {
-                  amount++;
-                  total+=count;
+                   Counting.buyOne();
+                   Counting.countOne();
                 });
               },
               child: Padding(

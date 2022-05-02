@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/images/images_name.dart';
-
-class HeadWidget extends StatelessWidget {
-  final int amount;
-  final int total;
-  const HeadWidget(this.amount,this.total, {
+import 'package:flutter_app3/mechanics/counting.dart';
+class HeadWidget extends StatefulWidget {
+  const HeadWidget({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<HeadWidget> createState() => _HeadWidgetState();
+}
+
+class _HeadWidgetState extends State<HeadWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
       fit: StackFit.expand,
       children: [
         LogoCompanyWidget(),
-        NumberOfPurchasesWidget(amount),
-        AmountWidget(total),
+        NumberOfPurchasesWidget(),
+        AmountWidget(),
       ],
     );
   }
 }
 
 class AmountWidget extends StatelessWidget {
-  final int total;
-  const AmountWidget(this.total,{
+  const AmountWidget({
     Key? key,
   }) : super(key: key);
 
@@ -35,20 +38,24 @@ class AmountWidget extends StatelessWidget {
         children: [
           Text('Total amount - ',
               style: TextStyle(fontWeight: FontWeight.w500)),
-          Text('$total',
-              style: TextStyle(fontWeight: FontWeight.w500))
+          Text('${Counting.totalCount}', style: TextStyle(fontWeight: FontWeight.w500))
         ],
       ),
     );
   }
 }
 
-class NumberOfPurchasesWidget extends StatelessWidget {
-  final int amount;
-  const NumberOfPurchasesWidget(this.amount,{
+class NumberOfPurchasesWidget extends StatefulWidget {
+  const NumberOfPurchasesWidget({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<NumberOfPurchasesWidget> createState() =>
+      _NumberOfPurchasesWidgetState();
+}
+
+class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -58,11 +65,16 @@ class NumberOfPurchasesWidget extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text('$amount',
-                  style:
-                  TextStyle(fontWeight: FontWeight.w500)),
-              Icon(Icons.add_shopping_cart_outlined,
-                  color: Colors.black),
+              Text('${Counting.amount}',
+                  style: TextStyle(fontWeight: FontWeight.w500)),
+              IconButton(
+                icon: Icon(Icons.add_shopping_cart_outlined),
+                onPressed: () {
+                  setState(() {
+                    Counting.checkBuy();
+                  });
+                },
+              )
             ],
           ),
         ],
