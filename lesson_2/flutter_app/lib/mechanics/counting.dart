@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Counting {
-  static int count=450;
+  final  int count;
   static int totalCount = 0;
   static int amount = 0;
-  static  buyOne() {
+  Counting(this.count);
+  static  buyOne(int count) {
     return totalCount += count;
   }
   static countOne() {

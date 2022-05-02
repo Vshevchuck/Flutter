@@ -6,34 +6,44 @@ class HeadWidget extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
+  
   @override
-  State<HeadWidget> createState() => _HeadWidgetState();
+  State<HeadWidget> createState() => HeadWidgetState();
 }
 
-class _HeadWidgetState extends State<HeadWidget> {
+class HeadWidgetState extends State<HeadWidget> {
+  void updateCost(){
+    setState(() {
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Stack(
       fit: StackFit.expand,
       children: [
         LogoCompanyWidget(),
-        NumberOfPurchasesWidget(),
+        NumberOfPurchasesWidget(function: updateCost),
         AmountWidget(),
       ],
     );
   }
 }
 
-class AmountWidget extends StatelessWidget {
+class AmountWidget extends StatefulWidget {
   const AmountWidget({
     Key? key,
   }) : super(key: key);
+  @override
+  State<AmountWidget> createState() => _AmountWidgetState();
+}
 
+class _AmountWidgetState extends State<AmountWidget> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
       left: 10,
-      bottom: 1,
+      bottom: 10,
       child: Row(
         children: [
           Text('Total amount - ',
@@ -46,8 +56,9 @@ class AmountWidget extends StatelessWidget {
 }
 
 class NumberOfPurchasesWidget extends StatefulWidget {
+  final Function function;
   const NumberOfPurchasesWidget({
-    Key? key,
+    Key? key,required this.function,
   }) : super(key: key);
 
   @override
@@ -72,6 +83,7 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
                 onPressed: () {
                   setState(() {
                     Counting.checkBuy();
+                    widget.function();
                   });
                 },
               )
@@ -90,9 +102,9 @@ class LogoCompanyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
+    return const Align(
       alignment: Alignment.topCenter,
-      child: const Image(
+      child: Image(
         width: 120,
         height: 90,
         image: AssetImage(ImagesName.logo),
