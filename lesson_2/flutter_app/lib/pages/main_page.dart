@@ -4,7 +4,6 @@ import 'package:flutter_app3/utils/images/images_name.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_app3/pages/catalog_widget.dart';
 import 'package:flutter_app3/pages/head_widget.dart';
-import 'package:flutter_app3/mechanics/counting.dart';
 import 'package:flutter_app3/pages/products_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -33,15 +32,19 @@ class _MainPageState extends State<MainPage> {
       body: SingleChildScrollView(
         child: Column(
             children: [
+              // ignore: prefer_const_constructors
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Container(
+                // ignore: prefer_const_constructors
+                child: SizedBox(
                   width: double.infinity,
                   height: 110,
+                  // ignore: prefer_const_constructors
+                  // Because count amount and costs don't work with const
                   child: HeadWidget(),
                 ),
               ),
-               CatalogWidget(),
+               const CatalogWidget(),
               InstanceRowWidget(instanceRow:products,function : updateMainWidget),
             ],
           ),

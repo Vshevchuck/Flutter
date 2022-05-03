@@ -32,16 +32,15 @@ class CatalogWidget extends StatelessWidget {
                   ),
                 )),
           ),
-          Expanded(
-            child: Container(
-                child: const Padding(
-                  padding: EdgeInsets.only(bottom: 10.0),
-                  child: Center(
-                    child: Text('jeans',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 20)),
-                  ),
-                )),
+          const Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: 10.0),
+              child: Center(
+                child: Text('jeans',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w200, fontSize: 20)),
+              ),
+            ),
           ),
         ],
       ),
