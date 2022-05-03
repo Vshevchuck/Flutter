@@ -15,9 +15,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int amount = 0;
-  int discount = 30;
-  int total=0;
   List<ElementOfInstance> products =[
     ElementOfInstance(235, -15, 'hoodie #1', ImagesName.product1),
     ElementOfInstance(365, -10, 'hoodie #2', ImagesName.product2),
@@ -26,7 +23,7 @@ class _MainPageState extends State<MainPage> {
     ElementOfInstance(400, -5, 'hoodie #5', ImagesName.product5),
     ElementOfInstance(188, -22, 'hoodie #6', ImagesName.product6),
   ];
-  void updateCost() {
+  void updateMainWidget() {
     setState(() {});
   }
   @override
@@ -45,7 +42,7 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
                CatalogWidget(),
-              InstanceRowWidget(instanceRow:products,function : updateCost),
+              InstanceRowWidget(instanceRow:products,function : updateMainWidget),
             ],
           ),
       ),
