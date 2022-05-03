@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/images/images_name.dart';
+import 'package:flutter_app3/utils/images/images_name.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_app3/widgets/catalog_widget.dart';
-import 'package:flutter_app3/widgets/head_widget.dart';
+import 'package:flutter_app3/pages/catalog_widget.dart';
+import 'package:flutter_app3/pages/head_widget.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
-import 'package:flutter_app3/widgets/products_widget.dart';
+import 'package:flutter_app3/pages/products_widget.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);

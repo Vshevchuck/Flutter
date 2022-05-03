@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/images/images_name.dart';
+import 'package:flutter_app3/utils/images/images_name.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
 class HeadWidget extends StatefulWidget {
   const HeadWidget({
