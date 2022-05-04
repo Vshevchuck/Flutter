@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app3/pages/products_widget.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
 
+import '../mechanics/counting.dart';
+
 class InstanceWidget extends StatefulWidget {
   final ElementOfInstance data;
   final Function function;
@@ -10,31 +12,29 @@ class InstanceWidget extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<InstanceWidget> createState() => _InstanceWidgetState();
+  State<InstanceWidget> createState() => InstanceWidgetState();
 }
 
-class _InstanceWidgetState extends State<InstanceWidget> {
-  Color colorBuy = Colors.white;
+class InstanceWidgetState extends State<InstanceWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 150,
-      color: colorBuy,
+      color: widget.data.color,
       child: GestureDetector(
         onTap: () {
           setState(() {
-            if(colorBuy==Colors.white) {
+            if(widget.data.color==Colors.white) {
               Counting.buyOne(widget.data.count);
               Counting.countOne();
-              colorBuy=Colors.black12;
+              widget.data.color=Colors.black12;
             }
             else{
               Counting.discountOne();
               Counting.deleteOne(widget.data.count);
-              colorBuy=Colors.white;
+              widget.data.color=Colors.white;
             }
             widget.function();
-
           });
 
         },

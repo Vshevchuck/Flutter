@@ -11,6 +11,7 @@ class MainPage extends StatefulWidget {
 
   @override
   State<MainPage> createState() => _MainPageState();
+
 }
 
 class _MainPageState extends State<MainPage> {
@@ -22,9 +23,6 @@ class _MainPageState extends State<MainPage> {
     ElementOfInstance(400, -5, 'hoodie #5', ImagesName.product5),
     ElementOfInstance(188, -22, 'hoodie #6', ImagesName.product6),
   ];
-  void updateMainWidget() {
-    setState(() {});
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,11 +39,11 @@ class _MainPageState extends State<MainPage> {
                   height: 110,
                   // ignore: prefer_const_constructors
                   // Because count amount and costs don't work with const
-                  child: HeadWidget(),
+                  child: HeadWidget(function2: ()=> setState((){})),
                 ),
               ),
                const CatalogWidget(),
-              InstanceRowWidget(instanceRow:products,function : updateMainWidget),
+              InstanceRowWidget(instanceRow:products,function: ()=> setState((){})),
             ],
           ),
       ),
