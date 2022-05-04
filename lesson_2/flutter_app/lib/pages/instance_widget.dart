@@ -14,17 +14,29 @@ class InstanceWidget extends StatefulWidget {
 }
 
 class _InstanceWidgetState extends State<InstanceWidget> {
+  Color colorBuy = Colors.white;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: 150,
+      color: colorBuy,
       child: GestureDetector(
         onTap: () {
           setState(() {
-            Counting.buyOne(widget.data.count);
-            Counting.countOne();
+            if(colorBuy==Colors.white) {
+              Counting.buyOne(widget.data.count);
+              Counting.countOne();
+              colorBuy=Colors.black12;
+            }
+            else{
+              Counting.discountOne();
+              Counting.deleteOne(widget.data.count);
+              colorBuy=Colors.white;
+            }
             widget.function();
+
           });
+
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -32,7 +44,7 @@ class _InstanceWidgetState extends State<InstanceWidget> {
             alignment: Alignment.centerLeft,
             child: SizedBox(
               width: 200,
-              height: 260,
+              height: 250,
               child: Column(children: [
                 Stack(
                   children: [

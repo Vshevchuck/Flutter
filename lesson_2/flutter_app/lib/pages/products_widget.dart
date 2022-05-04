@@ -24,6 +24,7 @@ class _InstanceRowWidgetState extends State<InstanceRowWidget> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      runSpacing: 10.0,
       spacing: 10.0,
       children:
         widget.instanceRow.map((data) => InstanceWidget(data: data, function: widget.function)).toList(),
