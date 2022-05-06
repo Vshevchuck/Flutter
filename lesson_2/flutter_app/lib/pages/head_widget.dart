@@ -18,7 +18,7 @@ class HeadWidgetState extends State<HeadWidget> {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.expand,
+      fit: StackFit.loose,
       children: [
         const LogoCompanyWidget(),
         NumberOfPurchasesWidget(function: ()=> setState((){}),function2 : widget.function2),

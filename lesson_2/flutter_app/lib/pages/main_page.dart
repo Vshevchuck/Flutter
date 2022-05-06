@@ -6,6 +6,8 @@ import 'package:flutter_app3/pages/catalog_widget.dart';
 import 'package:flutter_app3/pages/head_widget.dart';
 import 'package:flutter_app3/pages/products_widget.dart';
 
+import 'instance_widget.dart';
+
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);
 
@@ -22,9 +24,23 @@ class _MainPageState extends State<MainPage> {
     ElementOfInstance(400, -5, 'hoodie #5', ImagesName.product5),
     ElementOfInstance(188, -22, 'hoodie #6', ImagesName.product6),
   ];
-
+  bool isSwitched = true;
   @override
   Widget build(BuildContext context) {
+    void toggleSwitch(bool value) {
+      if (isSwitched == false) {
+        setState(() {
+          InstanceWidgetState.checkDiscount=true;
+          isSwitched = true;
+        });
+      } else {
+        setState(() {
+          InstanceWidgetState.checkDiscount=false;
+          isSwitched = false;
+        });
+      }
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -43,20 +59,35 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             Padding(
-                padding: const EdgeInsets.only(right: 25.0,left: 5.0),
-                child: TextField(
-                    onChanged: (String str)
-                    {
-                        setState(() {
-                          InstanceRowWidgetState.findProduct=str;
-                        });
-                    },
-                    cursorHeight: 20,
-                    decoration: InputDecoration(
-                        border: const OutlineInputBorder(),
-                        contentPadding: EdgeInsets.symmetric(vertical: 8),
-                        icon: Icon(Icons.zoom_in_sharp),
-                        isCollapsed: true)),
+              padding: const EdgeInsets.only(right: 10.0,bottom: 5.0),
+              child: TextField(
+                  onChanged: (String str) {
+                    setState(() {
+                      InstanceRowWidgetState.findProduct = str;
+                    });
+                  },
+                  cursorHeight: 20,
+                  decoration: InputDecoration(
+                      border: const OutlineInputBorder(),
+                      contentPadding: EdgeInsets.symmetric(vertical: 8),
+                      icon: Icon(Icons.zoom_in_sharp),
+                      isCollapsed: true)),
+            ),
+            Column(
+              children: [
+                Text('discount'),
+                SizedBox(
+                  width: 35,
+                  height: 30,
+                  child: FittedBox(
+                    fit: BoxFit.fill,
+                    child: Switch(
+                      value: isSwitched,
+                      onChanged: toggleSwitch,
+                    ),
+                  ),
+                )
+              ],
             ),
             const CatalogWidget(),
             InstanceRowWidget(
