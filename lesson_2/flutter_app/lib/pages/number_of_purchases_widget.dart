@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
 import 'package:flutter_app3/pages/instance_widget.dart';
-import 'package:flutter_app3/pages/main_page.dart';
 import 'package:flutter_app3/pages/products_widget.dart';
 import 'package:flutter_app3/pages/products_widget.dart';
 

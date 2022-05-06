@@ -39,13 +39,13 @@ class InstanceWidgetState extends State<InstanceWidget> {
 
         },
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(11.0),
           child: Align(
             alignment: Alignment.centerLeft,
             child: SizedBox(
               width: 200,
               height: 250,
-              child: Column(children: [
+              child:Column(children: [
                 Stack(
                   children: [
                     Image(

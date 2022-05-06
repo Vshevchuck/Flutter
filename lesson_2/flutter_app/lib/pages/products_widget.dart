@@ -25,12 +25,23 @@ class InstanceRowWidget extends StatefulWidget {
 }
 
 class InstanceRowWidgetState extends State<InstanceRowWidget> {
+  static String? findProduct;
+
   @override
   Widget build(BuildContext context) {
     if (Counting.checkAllBuy) {
       for (int i = 0; i < widget.instanceRow.length; i++) {
         widget.instanceRow.elementAt(i).color = Colors.white;
       }
+    }
+    if (findProduct != null && findProduct!='') {
+      for (int i = 0; i < widget.instanceRow.length; i++) {
+        if (widget.instanceRow.elementAt(i).text == findProduct) {
+          return InstanceWidget(
+              data: widget.instanceRow.elementAt(i), function: widget.function);
+        }
+      }
+      return Text('product not found');
     }
     return Wrap(
       runSpacing: 10.0,
