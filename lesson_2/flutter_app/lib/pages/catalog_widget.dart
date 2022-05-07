@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../utils/images/text_style.dart';
+
 class CatalogWidget extends StatelessWidget {
   const CatalogWidget({
     Key? key,
@@ -27,8 +29,7 @@ class CatalogWidget extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 10.0),
                   child: Center(
                     child: Text('hoody',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 20)),
+                        style: TextsStyle.selectedCatalogStyle),
                   ),
                 )),
           ),
@@ -37,8 +38,7 @@ class CatalogWidget extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 10.0),
               child: Center(
                 child: Text('jeans',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w200, fontSize: 20)),
+                    style: TextsStyle.catalogStyle),
               ),
             ),
           ),

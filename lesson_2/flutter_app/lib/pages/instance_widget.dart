@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/pages/products_widget.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
+import 'package:flutter_app3/utils/images/text_style.dart';
 
 import '../mechanics/counting.dart';
+import 'discount_widget.dart';
 
 class InstanceWidget extends StatefulWidget {
   final ElementOfInstance data;
@@ -73,13 +75,11 @@ class InstanceWidgetState extends State<InstanceWidget> {
                           )),
                     ],
                   ),
-                  Text('${widget.data.text}',
-                      style: const TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w500)),
+                  Text(widget.data.text,
+                      style: TextsStyle.productStyle),
                   const Text('(M,X,L,XL)', style: TextStyle(color: Colors.grey)),
                   Text('${widget.data.count} \$',
-                      style: const TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.w500)),
+                      style: TextsStyle.countStyle),
                 ]),
               ),
             ),
@@ -90,31 +90,3 @@ class InstanceWidgetState extends State<InstanceWidget> {
   }
 }
 
-class DiscountWidget extends StatelessWidget {
-  const DiscountWidget({
-    Key? key,
-    required this.widget,
-  }) : super(key: key);
-
-  final InstanceWidget widget;
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      left: 5,
-      top: 5,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-            child: Text(
-              '${widget.data.discount} %',
-              style: const TextStyle(
-                  fontSize: 12,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w300),
-            ),
-            color: Colors.red),
-      ),
-    );
-  }
-}
