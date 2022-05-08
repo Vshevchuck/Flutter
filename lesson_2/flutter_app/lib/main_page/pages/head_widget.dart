@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
-import 'package:flutter_app3/pages/logo_company_widget.dart';
-import 'package:flutter_app3/pages/amount_widget.dart';
-import 'package:flutter_app3/pages/number_of_purchases_widget.dart';
+import 'package:flutter_app3/main_page/pages/logo_company_widget.dart';
+import 'package:flutter_app3/main_page/pages/amount_widget.dart';
+import 'package:flutter_app3/main_page/pages/number_of_purchases_widget.dart';
 class HeadWidget extends StatefulWidget {
   final Function function2;
   const HeadWidget({

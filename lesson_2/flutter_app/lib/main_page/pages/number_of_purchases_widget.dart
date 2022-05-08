@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
-import 'package:flutter_app3/pages/instance_widget.dart';
-import 'package:flutter_app3/pages/products_widget.dart';
-import 'package:flutter_app3/pages/products_widget.dart';
 
-import 'products_widget.dart';
 
 class NumberOfPurchasesWidget extends StatefulWidget {
   final Function function;
@@ -19,6 +15,14 @@ class NumberOfPurchasesWidget extends StatefulWidget {
 }
 
 class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
+  void buyAll(){
+    setState(() {
+      Counting.allBuy();
+      Counting.checkBuy();
+      widget.function();
+      widget.function2();
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -33,12 +37,7 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
               IconButton(
                 icon: const Icon(Icons.add_shopping_cart_outlined),
                 onPressed: () {
-                  setState(() {
-                    Counting.allBuy();
-                    Counting.checkBuy();
-                    widget.function();
-                    widget.function2();
-                  });
+                  buyAll();
                 },
               )
             ],

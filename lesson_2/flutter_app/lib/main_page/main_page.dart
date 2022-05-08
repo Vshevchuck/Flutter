@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/utils/images/images_name.dart';
+import 'package:flutter_app3/main_page/utils/images/images_name.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_app3/pages/catalog_widget.dart';
-import 'package:flutter_app3/pages/head_widget.dart';
-import 'package:flutter_app3/pages/products_widget.dart';
-import 'package:flutter_app3/pages/set_discount_widget.dart';
+import 'package:flutter_app3/main_page/pages/catalog_widget.dart';
+import 'package:flutter_app3/main_page/pages/head_widget.dart';
+import 'package:flutter_app3/main_page/pages/products_widget.dart';
+import 'package:flutter_app3/main_page/pages/set_discount_widget.dart';
 
-import 'find_product_widget.dart';
+import 'pages/find_product_widget.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);

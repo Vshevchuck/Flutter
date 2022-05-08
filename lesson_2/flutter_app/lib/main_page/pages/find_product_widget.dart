@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/pages/products_widget.dart';
+import 'package:flutter_app3/main_page/pages/products_widget.dart';
 
 class FindProductsWidget extends StatefulWidget {
   final Function function;
@@ -12,16 +12,20 @@ class FindProductsWidget extends StatefulWidget {
 }
 
 class _FindProductsWidgetState extends State<FindProductsWidget> {
+  void findProduct(String str){
+    setState(() {
+      InstanceRowWidgetState.findProduct = str;
+      widget.function();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 10.0, bottom: 5.0),
       child: TextField(
           onChanged: (String str) {
-            setState(() {
-              InstanceRowWidgetState.findProduct = str;
-              widget.function();
-            });
+            findProduct(str);
           },
           cursorHeight: 20,
           decoration: const InputDecoration(

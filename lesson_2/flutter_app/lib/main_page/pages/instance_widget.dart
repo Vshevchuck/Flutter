@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/pages/products_widget.dart';
+import 'package:flutter_app3/main_page/pages/products_widget.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
-import 'package:flutter_app3/utils/images/text_style.dart';
+import 'package:flutter_app3/main_page/utils/images/text_style.dart';
 
-import '../mechanics/counting.dart';
 import 'discount_widget.dart';
 
 class InstanceWidget extends StatefulWidget {
@@ -19,6 +18,21 @@ class InstanceWidget extends StatefulWidget {
 
 class InstanceWidgetState extends State<InstanceWidget> {
   static bool checkDiscount=true;
+  void chooseProduct(){
+    setState(() {
+      if(widget.data.color==Colors.white) {
+        Counting.buyOne(widget.data.count);
+        Counting.countOne();
+        widget.data.color=Colors.black12;
+      }
+      else{
+        Counting.discountOne();
+        Counting.deleteOne(widget.data.count);
+        widget.data.color=Colors.white;
+      }
+      widget.function();
+    });
+  }
   @override
   Widget build(BuildContext context) {
     Widget? Discount;
@@ -37,19 +51,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
       child: InkWell(
         splashColor: Colors.blueGrey,
         onTap: () {
-          setState(() {
-            if(widget.data.color==Colors.white) {
-              Counting.buyOne(widget.data.count);
-              Counting.countOne();
-              widget.data.color=Colors.black12;
-            }
-            else{
-              Counting.discountOne();
-              Counting.deleteOne(widget.data.count);
-              widget.data.color=Colors.white;
-            }
-            widget.function();
-          });
+          chooseProduct();
         },
         child: Ink(
           child: Padding(

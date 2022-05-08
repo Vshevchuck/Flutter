@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/utils/images/images_name.dart';
+import 'package:flutter_app3/main_page/utils/images/images_name.dart';
 
 class LogoCompanyWidget extends StatelessWidget {
   const LogoCompanyWidget({
