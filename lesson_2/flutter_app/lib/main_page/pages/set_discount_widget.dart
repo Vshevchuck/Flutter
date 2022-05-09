@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/pages/instance_widget.dart';
 
-class SetDiscountWidget extends StatefulWidget {
+class SetDiscountWidget extends StatelessWidget {
   final Function function;
   const SetDiscountWidget({
     Key? key,required this.function
   }) : super(key: key);
-  @override
-  State<SetDiscountWidget> createState() => _DiscountWidgetState();
-}
-class _DiscountWidgetState extends State<SetDiscountWidget> {
   static bool isSwitched = true;
   void toggleSwitch(bool value) {
     if (isSwitched == false) {
-      setState(() {
         InstanceWidgetState.checkDiscount=true;
         isSwitched = true;
-        widget.function();
-      });
+        function();
     } else {
-      setState(() {
         InstanceWidgetState.checkDiscount=false;
         isSwitched = false;
-        widget.function();
-      });
+        function();
     }
   }
   @override

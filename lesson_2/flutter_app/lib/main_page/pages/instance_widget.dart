@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/pages/products_widget.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
-import 'package:flutter_app3/main_page/utils/images/text_style.dart';
+import 'package:flutter_app3/main_page/utils/text_styles/text_style.dart';
 
+import '../utils/colors/colors.dart';
 import 'discount_widget.dart';
 
 class InstanceWidget extends StatefulWidget {
@@ -20,42 +21,41 @@ class InstanceWidgetState extends State<InstanceWidget> {
   static bool checkDiscount=true;
   void chooseProduct(){
     setState(() {
-      if(widget.data.color==Colors.white) {
+      if(widget.data.color==ColorsApp.colorNoChoose) {
         Counting.buyOne(widget.data.count);
         Counting.countOne();
-        widget.data.color=Colors.black12;
+        widget.data.color=ColorsApp.colorChoose;
       }
       else{
         Counting.discountOne();
         Counting.deleteOne(widget.data.count);
-        widget.data.color=Colors.white;
+        widget.data.color=ColorsApp.colorNoChoose;
       }
       widget.function();
     });
   }
   @override
   Widget build(BuildContext context) {
-    Widget? Discount;
+    Widget? discount;
     if(checkDiscount)
       {
-        Discount=DiscountWidget(widget: widget);
+        discount=DiscountWidget(widget: widget);
       }
     else
       {
-        Discount=null;
+        discount=null;
       }
-
     return Container(
       width: 150,
       color: widget.data.color,
       child: InkWell(
-        splashColor: Colors.blueGrey,
+        splashColor: ColorsApp.colorClick,
         onTap: () {
           chooseProduct();
         },
         child: Ink(
           child: Padding(
-            padding: const EdgeInsets.all(11.0),
+            padding: const EdgeInsets.all(16.0),
             child: Align(
               alignment: Alignment.centerLeft,
               child: SizedBox(
@@ -67,19 +67,19 @@ class InstanceWidgetState extends State<InstanceWidget> {
                       Image(
                         image: AssetImage(widget.data.image),
                       ),
-                      Container(child: Discount),
+                      Container(child: discount),
                       const Positioned(
                           right: 5,
                           top: 10,
                           child: Icon(
                             Icons.favorite,
-                            color: Colors.white54,
+                            color: ColorsApp.colorIconsFavorite ,
                           )),
                     ],
                   ),
                   Text(widget.data.text,
                       style: TextsStyle.productStyle),
-                  const Text('(M,X,L,XL)', style: TextStyle(color: Colors.grey)),
+                  const Text('(M,X,L,XL)', style: TextStyle(color: ColorsApp.colorSizeTable)),
                   Text('${widget.data.count} \$',
                       style: TextsStyle.countStyle),
                 ]),

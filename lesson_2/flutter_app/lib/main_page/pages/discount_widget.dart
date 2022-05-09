@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../utils/images/text_style.dart';
+import 'package:flutter_app3/main_page/utils/colors/colors.dart';
+import '../utils/text_styles/text_style.dart';
 import 'instance_widget.dart';
 
 class DiscountWidget extends StatelessWidget {
@@ -22,7 +23,7 @@ class DiscountWidget extends StatelessWidget {
               '${widget.data.discount} %',
               style: TextsStyle.discountStyle,
             ),
-            color: Colors.red),
+            color: ColorsApp.colorDiscountContainer),
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/utils/images/images_name.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_app3/main_page/pages/catalog_widget.dart';
 import 'package:flutter_app3/main_page/pages/head_widget.dart';
 import 'package:flutter_app3/main_page/pages/products_widget.dart';
@@ -9,7 +8,7 @@ import 'package:flutter_app3/main_page/pages/set_discount_widget.dart';
 import 'pages/find_product_widget.dart';
 
 class MainPage extends StatefulWidget {
-  MainPage({Key? key}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -27,29 +26,31 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // ignore: prefer_const_constructors
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
               // ignore: prefer_const_constructors
-              child: SizedBox(
-                width: double.infinity,
-                height: 110,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
                 // ignore: prefer_const_constructors
-                // Because count amount and costs don't work with const
-                child: HeadWidget(function2: () => setState(() {})),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 110,
+                  // ignore: prefer_const_constructors
+                  // Because count amount and costs don't work with const
+                  child: HeadWidget(function2: () => setState(() {})),
+                ),
               ),
-            ),
-            FindProductsWidget(function: () => setState(() {})),
-            SetDiscountWidget(function: () => setState(() {})),
-            const CatalogWidget(),
-            InstanceRowWidget(
-                instanceRow: products, function: () => setState(() {})),
-          ],
+              FindProductsWidget(function: () => setState(() {})),
+              SetDiscountWidget(function: () => setState(() {})),
+              const CatalogWidget(),
+              InstanceRowWidget(
+                  instanceRow: products, function: () => setState(() {})),
+            ],
+          ),
         ),
       ),
     );

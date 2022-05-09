@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
 
-import '../utils/images/text_style.dart';
+import '../utils/text_styles/text_style.dart';
 
 class AmountWidget extends StatefulWidget {
   const AmountWidget({
@@ -15,8 +15,8 @@ class _AmountWidgetState extends State<AmountWidget> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: 10,
-      bottom: 10,
+      left: 8,
+      bottom: 8,
       child: Row(
         children: [
           const Text('Total amount - ',

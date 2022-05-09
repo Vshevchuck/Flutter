@@ -1,28 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/pages/products_widget.dart';
 
-class FindProductsWidget extends StatefulWidget {
+class FindProductsWidget extends StatelessWidget {
   final Function function;
   const FindProductsWidget({
     Key? key,required this.function
   }) : super(key: key);
 
-  @override
-  State<FindProductsWidget> createState() => _FindProductsWidgetState();
-}
-
-class _FindProductsWidgetState extends State<FindProductsWidget> {
   void findProduct(String str){
-    setState(() {
       InstanceRowWidgetState.findProduct = str;
-      widget.function();
-    });
+      function();
   }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10.0, bottom: 5.0),
+      padding: const EdgeInsets.only(right: 16.0, bottom: 8.0),
       child: TextField(
           onChanged: (String str) {
             findProduct(str);

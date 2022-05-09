@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../utils/images/text_style.dart';
+import '../utils/text_styles/text_style.dart';
+import '../utils/colors/colors.dart';
 
 class CatalogWidget extends StatelessWidget {
   const CatalogWidget({
@@ -20,13 +21,13 @@ class CatalogWidget extends StatelessWidget {
                 decoration: const BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
-                      color: Colors.black,
+                      color: ColorsApp.colorBorderChooseCatalog,
                       width: 2.0,
                     ),
                   ),
                 ),
                 child: const Padding(
-                  padding: EdgeInsets.only(bottom: 10.0),
+                  padding: EdgeInsets.only(bottom: 8.0),
                   child: Center(
                     child: Text('hoody',
                         style: TextsStyle.selectedCatalogStyle),

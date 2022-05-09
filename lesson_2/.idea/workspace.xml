@@ -20,20 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed81e3c5-6e00-40a1-85c9-2c339ead3233" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/amount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/amount_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/catalog_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/catalog_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/discount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/discount_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/find_product_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/find_product_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/head_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/head_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/instance_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/instance_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/logo_company_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/logo_company_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/number_of_purchases_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/number_of_purchases_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/products_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/products_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/pages/set_discount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/set_discount_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/utils/images/images_name.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/images/images_name.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/utils/images/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/images/text_style.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/colors/colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/amount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/amount_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/catalog_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/catalog_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/discount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/discount_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/find_product_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/find_product_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/instance_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/instance_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/products_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/products_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/set_discount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/set_discount_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/images/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/text_styles/text_style.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +52,12 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\Documents\GitHub\Flutter\lesson_2\flutter_app\lib\main_page\utils\text_styles" />
       <recent name="C:\Users\Dell\Documents\GitHub\Flutter\lesson_2\flutter_app\lib\main_page" />
     </key>
   </component>
@@ -112,5 +110,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="394" y="130" key="#tests_in_bin/0.0.1366.728@0.0.1366.728" timestamp="1652044937893" />
+    <state x="465" y="149" key="FileChooserDialogImpl" timestamp="1652130428787">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="465" y="149" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1652130428787" />
+    <state width="1323" height="51" key="GridCell.Tab.0.bottom" timestamp="1652134497904">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="51" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652134497904" />
+    <state width="1323" height="51" key="GridCell.Tab.0.center" timestamp="1652134497903">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="51" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1652134497903" />
+    <state width="1323" height="51" key="GridCell.Tab.0.left" timestamp="1652134497903">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="51" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1652134497903" />
+    <state width="1323" height="51" key="GridCell.Tab.0.right" timestamp="1652134497903">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="51" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1652134497903" />
+    <state x="186" y="17" key="SettingsEditor" timestamp="1652133546265">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="186" y="17" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1652133546265" />
   </component>
 </project>
