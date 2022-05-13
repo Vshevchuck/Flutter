@@ -9,7 +9,7 @@ import 'pages/find_product_widget.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
-
+  static List<ElementOfInstance> selectedProducts = [];
   @override
   State<MainPage> createState() => _MainPageState();
 }

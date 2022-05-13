@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/utils/colors/colors.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
 import 'package:flutter_app3/main_page/pages/instance_widget.dart';
+import 'package:flutter_app3/main_page/main_page.dart';
 
 class ElementOfInstance {
   final int count;
@@ -11,6 +12,12 @@ class ElementOfInstance {
   Color color = ColorsApp.colorNoChoose;
 
   ElementOfInstance(this.count, this.discount, this.text, this.image);
+
+  static void show(List<ElementOfInstance> product) {
+    for (int i = 0; i < product.length; i++) {
+      print(product[i].text);
+    }
+  }
 }
 
 class InstanceRowWidget extends StatefulWidget {
@@ -30,12 +37,12 @@ class InstanceRowWidgetState extends State<InstanceRowWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (Counting.checkAllBuy) {
+    if (MainPage.selectedProducts.isEmpty) {
       for (int i = 0; i < widget.instanceRow.length; i++) {
         widget.instanceRow.elementAt(i).color = ColorsApp.colorNoChoose;
       }
     }
-    if (findProduct != null && findProduct!='') {
+    if (findProduct != null && findProduct != '') {
       for (int i = 0; i < widget.instanceRow.length; i++) {
         if (widget.instanceRow.elementAt(i).text == findProduct) {
           return InstanceWidget(

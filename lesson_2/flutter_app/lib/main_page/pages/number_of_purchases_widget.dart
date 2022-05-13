@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
+import 'package:flutter_app3/main_page/main_page.dart';
 
 
 class NumberOfPurchasesWidget extends StatefulWidget {
@@ -17,8 +18,7 @@ class NumberOfPurchasesWidget extends StatefulWidget {
 class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
   void buyAll(){
     setState(() {
-      Counting.allBuy();
-      Counting.checkBuy();
+      MainPage.selectedProducts=[];
       widget.function();
       widget.function2();
     });
@@ -32,7 +32,7 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
         children: [
           Row(
             children: [
-              Text('${Counting.amount}',
+              Text('${MainPage.selectedProducts.length}',
                   style: const TextStyle(fontWeight: FontWeight.w500)),
               IconButton(
                 icon: const Icon(Icons.add_shopping_cart_outlined),

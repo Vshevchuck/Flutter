@@ -15,16 +15,16 @@ class FindProductsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 16.0, bottom: 8.0),
+      padding: const EdgeInsets.only(right: 16.0, bottom: 8.0,left: 16.0),
       child: TextField(
           onChanged: (String str) {
             findProduct(str);
           },
           cursorHeight: 20,
           decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              contentPadding: EdgeInsets.symmetric(vertical: 8),
-              icon: Icon(Icons.zoom_in_sharp),
+              border: UnderlineInputBorder(),
+              contentPadding: EdgeInsets.symmetric(vertical: 16),
+              prefixIcon: Icon(Icons.zoom_in_sharp),
               isCollapsed: true)),
     );
   }
