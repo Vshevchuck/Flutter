@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../utils/text_styles/text_style.dart';
-import '../utils/colors/colors.dart';
+import 'package:flutter_app3/utils/text_styles/text_style.dart';
+import 'package:flutter_app3/utils/colors/colors.dart';
 
 class CatalogWidget extends StatelessWidget {
   const CatalogWidget({

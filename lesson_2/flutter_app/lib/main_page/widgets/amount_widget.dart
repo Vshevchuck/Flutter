@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/main_page.dart';
-import 'package:flutter_app3/mechanics/counting.dart';
 
-import '../utils/text_styles/text_style.dart';
+import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
 class AmountWidget extends StatefulWidget {
   const AmountWidget({

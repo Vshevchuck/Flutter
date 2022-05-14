@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/utils/colors/colors.dart';
+import 'package:flutter_app3/utils/colors/colors.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
-import 'package:flutter_app3/main_page/pages/instance_widget.dart';
+import 'package:flutter_app3/main_page/widgets/instance_widget.dart';
 import 'package:flutter_app3/main_page/main_page.dart';
 
 class ElementOfInstance {

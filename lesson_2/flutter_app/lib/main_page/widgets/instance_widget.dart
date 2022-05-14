@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/pages/products_widget.dart';
+import 'package:flutter_app3/main_page/widgets/products_widget.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
-import 'package:flutter_app3/main_page/utils/text_styles/text_style.dart';
+import 'package:flutter_app3/utils/text_styles/text_style.dart';
 import 'package:flutter_app3/main_page/main_page.dart';
 
-import '../utils/colors/colors.dart';
+import 'package:flutter_app3/utils/colors/colors.dart';
 import 'discount_widget.dart';
 
 class InstanceWidget extends StatefulWidget {
@@ -25,15 +25,11 @@ class InstanceWidgetState extends State<InstanceWidget> {
       if(!MainPage.selectedProducts.contains(widget.data)) {
         MainPage.selectedProducts.add(widget.data);
         ElementOfInstance.show(MainPage.selectedProducts);
-        Counting.buyOne(widget.data.count);
-        Counting.countOne();
         widget.data.color=ColorsApp.colorChoose;
       }
       else{
         MainPage.selectedProducts.remove(widget.data);
         ElementOfInstance.show(MainPage.selectedProducts);
-        Counting.discountOne();
-        Counting.deleteOne(widget.data.count);
         widget.data.color=ColorsApp.colorNoChoose;
       }
       widget.function();

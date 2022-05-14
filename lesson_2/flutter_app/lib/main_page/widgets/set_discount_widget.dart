@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/pages/instance_widget.dart';
+import 'package:flutter_app3/main_page/widgets/instance_widget.dart';
 
 class SetDiscountWidget extends StatelessWidget {
   final Function function;

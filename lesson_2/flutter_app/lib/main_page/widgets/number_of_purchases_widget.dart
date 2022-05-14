@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/counting.dart';
 import 'package:flutter_app3/main_page/main_page.dart';
@@ -33,11 +34,12 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
           Row(
             children: [
               Text('${MainPage.selectedProducts.length}',
-                  style: const TextStyle(fontWeight: FontWeight.w500)),
+                  style: const TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black)),
               IconButton(
-                icon: const Icon(Icons.add_shopping_cart_outlined),
+                icon: const Icon(Icons.add_shopping_cart_outlined, size: 25,color: Colors.black,),
                 onPressed: () {
                   buyAll();
+                  Navigator.of(context).pushNamed('/purchases');
                 },
               )
             ],

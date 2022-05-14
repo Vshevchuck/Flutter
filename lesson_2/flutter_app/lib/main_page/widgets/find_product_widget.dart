@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/pages/products_widget.dart';
+import 'package:flutter_app3/main_page/widgets/products_widget.dart';
 
 class FindProductsWidget extends StatelessWidget {
   final Function function;

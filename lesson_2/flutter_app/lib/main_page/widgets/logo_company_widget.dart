@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/utils/images/images_name.dart';
+import 'package:flutter_app3/utils/images/images_name.dart';
 
 class LogoCompanyWidget extends StatelessWidget {
   const LogoCompanyWidget({
@@ -11,8 +11,8 @@ class LogoCompanyWidget extends StatelessWidget {
     return const Align(
       alignment: Alignment.topCenter,
       child: Image(
-        width: 120,
-        height: 90,
+        width: 110,
+        height: 80,
         image: AssetImage(ImagesName.logo),
       ),
     );
