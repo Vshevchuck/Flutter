@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/main_page.dart';
-
+import 'package:flutter_app3/mechanics/data.dart';
 import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
 class AmountWidget extends StatefulWidget {
@@ -17,8 +16,8 @@ class _AmountWidgetState extends State<AmountWidget> {
   Widget build(BuildContext context) {
     int getSum() {
       int sum = 0;
-      for (int i = 0; i < MainPage.selectedProducts.length; i++) {
-        sum+=MainPage.selectedProducts[i].count;
+      for (int i = 0; i < Data.selectedProducts.length; i++) {
+        sum+=Data.selectedProducts[i].count;
       }
       return sum;
     }

@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/mechanics/counting.dart';
 import 'package:flutter_app3/main_page/main_page.dart';
+import 'package:flutter_app3/mechanics/data.dart';
 
 
 class NumberOfPurchasesWidget extends StatefulWidget {
@@ -19,7 +18,7 @@ class NumberOfPurchasesWidget extends StatefulWidget {
 class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
   void buyAll(){
     setState(() {
-      MainPage.selectedProducts=[];
+      Data.selectedProducts=[];
       widget.function();
       widget.function2();
     });
@@ -33,13 +32,13 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
         children: [
           Row(
             children: [
-              Text('${MainPage.selectedProducts.length}',
+              Text('${Data.selectedProducts.length}',
                   style: const TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black)),
               IconButton(
                 icon: const Icon(Icons.add_shopping_cart_outlined, size: 25,color: Colors.black,),
                 onPressed: () {
-                  buyAll();
-                  Navigator.of(context).pushNamed('/purchases');
+                  //buyAll();
+                  Navigator.of(context).pushReplacementNamed('/purchases');
                 },
               )
             ],

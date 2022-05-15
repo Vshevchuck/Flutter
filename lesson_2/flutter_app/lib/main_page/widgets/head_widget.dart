@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/mechanics/counting.dart';
 import 'package:flutter_app3/main_page/widgets/logo_company_widget.dart';
 import 'package:flutter_app3/main_page/widgets/amount_widget.dart';
 import 'package:flutter_app3/main_page/widgets/number_of_purchases_widget.dart';

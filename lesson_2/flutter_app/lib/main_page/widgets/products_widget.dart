@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/utils/colors/colors.dart';
-import 'package:flutter_app3/mechanics/counting.dart';
 import 'package:flutter_app3/main_page/widgets/instance_widget.dart';
-import 'package:flutter_app3/main_page/main_page.dart';
+import 'package:flutter_app3/mechanics/data.dart';
 
 class ElementOfInstance {
   final int count;
@@ -15,8 +14,9 @@ class ElementOfInstance {
 
   static void show(List<ElementOfInstance> product) {
     for (int i = 0; i < product.length; i++) {
-      print(product[i].text);
+      print('${product[i].text} - ${product[i].color}');
     }
+    print('----------');
   }
 }
 
@@ -37,7 +37,7 @@ class InstanceRowWidgetState extends State<InstanceRowWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (MainPage.selectedProducts.isEmpty) {
+    if (Data.selectedProducts.isEmpty) {
       for (int i = 0; i < widget.instanceRow.length; i++) {
         widget.instanceRow.elementAt(i).color = ColorsApp.colorNoChoose;
       }

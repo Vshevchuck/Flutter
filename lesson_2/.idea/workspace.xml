@@ -20,23 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed81e3c5-6e00-40a1-85c9-2c339ead3233" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flutter_app/lib/purchases_page/purchases_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flutter_app/lib/mechanics/data.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/app.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/amount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/amount_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/catalog_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/catalog_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/discount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/discount_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/find_product_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/find_product_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/head_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/head_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/instance_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/instance_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/logo_company_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/logo_company_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/number_of_purchases_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/number_of_purchases_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/products_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/products_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/pages/set_discount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/set_discount_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/colors/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/utils/colors/colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/images/images_name.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/utils/images/images_name.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/utils/text_styles/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/utils/text_styles/text_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/amount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/amount_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/catalog_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/catalog_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/find_product_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/find_product_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/head_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/head_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/instance_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/instance_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/number_of_purchases_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/number_of_purchases_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/products_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/products_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/mechanics/counting.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/purchases_page/purchases_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/purchases_page/purchases_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +108,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="414" y="184" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1652044937430" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1652626359757">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1652626359757" />
     <state x="394" y="130" key="#tests_in_bin" timestamp="1652044937893">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -121,25 +120,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="465" y="149" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1652130428787" />
-    <state width="1323" height="142" key="GridCell.Tab.0.bottom" timestamp="1652562104797">
+    <state width="1323" height="165" key="GridCell.Tab.0.bottom" timestamp="1652625964256">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="142" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652562104797" />
-    <state width="1323" height="142" key="GridCell.Tab.0.center" timestamp="1652562104797">
+    <state width="1323" height="165" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652625964256" />
+    <state width="1323" height="165" key="GridCell.Tab.0.center" timestamp="1652625964256">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="142" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1652562104797" />
-    <state width="1323" height="142" key="GridCell.Tab.0.left" timestamp="1652562104797">
+    <state width="1323" height="165" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1652625964256" />
+    <state width="1323" height="165" key="GridCell.Tab.0.left" timestamp="1652625964240">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="142" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1652562104797" />
-    <state width="1323" height="142" key="GridCell.Tab.0.right" timestamp="1652562104797">
+    <state width="1323" height="165" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1652625964240" />
+    <state width="1323" height="165" key="GridCell.Tab.0.right" timestamp="1652625964256">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="142" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1652562104797" />
+    <state width="1323" height="165" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1652625964256" />
     <state x="186" y="17" key="SettingsEditor" timestamp="1652133546265">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="17" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1652133546265" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1652625733587">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1652625733587" />
   </component>
 </project>
