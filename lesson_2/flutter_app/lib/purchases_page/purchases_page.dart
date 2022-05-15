@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/widgets/head_widget.dart';
 import 'package:flutter_app3/main_page/widgets/products_widget.dart';
+import 'package:flutter_app3/purchases_page/widgets/empty_basket_widget.dart';
+import 'package:flutter_app3/purchases_page/widgets/selected_products_widget.dart';
+import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
 import '../main_page/main_page.dart';
 import '../main_page/widgets/products_widget.dart';
@@ -57,16 +60,9 @@ class _PurchasesPageState extends State<PurchasesPage> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              InstanceRowWidget(
-                instanceRow: Data.selectedProducts,
-                function: () => setState(() {}),
-              ),
-            ],
-          ),
-        ),
+        child: Data.selectedProducts.isEmpty
+            ? EmptyBasketWidget()
+            : SelectedProductsWidget(callBack: () => setState(() {})),
       ),
     );
   }

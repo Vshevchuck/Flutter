@@ -16,13 +16,6 @@ class NumberOfPurchasesWidget extends StatefulWidget {
 }
 
 class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
-  void buyAll(){
-    setState(() {
-      Data.selectedProducts=[];
-      widget.function();
-      widget.function2();
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -37,7 +30,6 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
               IconButton(
                 icon: const Icon(Icons.add_shopping_cart_outlined, size: 25,color: Colors.black,),
                 onPressed: () {
-                  //buyAll();
                   Navigator.of(context).pushReplacementNamed('/purchases');
                 },
               )
