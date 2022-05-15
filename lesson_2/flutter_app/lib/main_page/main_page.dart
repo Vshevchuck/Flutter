@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/data.dart';
-import 'package:flutter_app3/utils/images/images_name.dart';
 import 'package:flutter_app3/main_page/widgets/catalog_widget.dart';
 import 'package:flutter_app3/main_page/widgets/head_widget.dart';
 import 'package:flutter_app3/main_page/widgets/products_widget.dart';

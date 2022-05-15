@@ -9,6 +9,7 @@ class ElementOfInstance {
   final String text;
   final String image;
   Color color = ColorsApp.colorNoChoose;
+  int amount = 0;
 
   ElementOfInstance(this.count, this.discount, this.text, this.image);
 

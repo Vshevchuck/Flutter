@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/main_page.dart';
 import 'package:flutter_app3/mechanics/data.dart';
 
 

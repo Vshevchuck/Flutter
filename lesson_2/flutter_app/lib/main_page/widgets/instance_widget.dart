@@ -4,20 +4,20 @@ import 'package:flutter_app3/utils/text_styles/text_style.dart';
 import 'package:flutter_app3/mechanics/data.dart';
 
 import 'package:flutter_app3/utils/colors/colors.dart';
+import '../../product_info_page/product_info_page.dart';
 import 'discount_widget.dart';
 
 class InstanceWidget extends StatefulWidget {
   final ElementOfInstance data;
   final Function function;
-
   const InstanceWidget({Key? key, required this.data, required this.function})
       : super(key: key);
-
   @override
   State<InstanceWidget> createState() => InstanceWidgetState();
 }
 
 class InstanceWidgetState extends State<InstanceWidget> {
+
   static bool checkDiscount = true;
 
   void chooseProduct() {
@@ -33,6 +33,10 @@ class InstanceWidgetState extends State<InstanceWidget> {
         ElementOfInstance.show(Data.selectedProducts);
         widget.data.color = ColorsApp.colorNoChoose;
       }
+      /*final navigator = Navigator.of(context);
+      navigator.push(
+        MaterialPageRoute<void> (builder:(context) => ProductInfo(data: widget.data)),
+      );*/
       widget.function();
     });
   }
