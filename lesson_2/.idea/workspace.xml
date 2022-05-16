@@ -21,11 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ed81e3c5-6e00-40a1-85c9-2c339ead3233" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/amount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/amount_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/instance_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/instance_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/number_of_purchases_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/number_of_purchases_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/products_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/products_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/product_info_page/product_info_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/product_info_page/product_info_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_app/lib/purchases_page/widgets/selected_products_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/purchases_page/widgets/selected_products_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,29 +114,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="465" y="149" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1652130428787" />
-    <state width="1323" height="119" key="GridCell.Tab.0.bottom" timestamp="1652654832469">
+    <state width="1323" height="119" key="GridCell.Tab.0.bottom" timestamp="1652656192866">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="119" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652654832469" />
-    <state width="1323" height="119" key="GridCell.Tab.0.center" timestamp="1652654832461">
+    <state width="1323" height="119" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1652656192866" />
+    <state width="1323" height="119" key="GridCell.Tab.0.center" timestamp="1652656192865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="119" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1652654832461" />
-    <state width="1323" height="119" key="GridCell.Tab.0.left" timestamp="1652654832461">
+    <state width="1323" height="119" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1652656192865" />
+    <state width="1323" height="119" key="GridCell.Tab.0.left" timestamp="1652656192865">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="119" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1652654832461" />
-    <state width="1323" height="119" key="GridCell.Tab.0.right" timestamp="1652654832461">
+    <state width="1323" height="119" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1652656192865" />
+    <state width="1323" height="119" key="GridCell.Tab.0.right" timestamp="1652656192866">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="119" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1652654832461" />
+    <state width="1323" height="119" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1652656192866" />
     <state x="186" y="17" key="SettingsEditor" timestamp="1652133546265">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="186" y="17" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1652133546265" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1652625733587">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1652740509460">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1652625733587" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1652740509460" />
   </component>
 </project>

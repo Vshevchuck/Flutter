@@ -17,17 +17,22 @@ class _AmountWidgetState extends State<AmountWidget> {
     int getSum() {
       int sum = 0;
       for (int i = 0; i < Data.selectedProducts.length; i++) {
-        sum+=Data.selectedProducts[i].count;
+        if (Data.selectedProducts[i].amount == 1) {
+          sum += Data.selectedProducts[i].count;
+        } else {
+          sum +=
+              Data.selectedProducts[i].count * Data.selectedProducts[i].amount;
+        }
       }
       return sum;
     }
+
     return Positioned(
       left: 8,
       bottom: 8,
       child: Row(
         children: [
-          const Text('Total amount - ',
-              style: TextsStyle.totalAmountStyle),
+          const Text('Total amount - ', style: TextsStyle.totalAmountStyle),
           Text('${getSum()}', style: TextsStyle.totalAmountStyle)
         ],
       ),

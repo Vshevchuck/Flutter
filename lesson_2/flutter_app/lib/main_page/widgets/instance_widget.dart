@@ -22,21 +22,10 @@ class InstanceWidgetState extends State<InstanceWidget> {
 
   void chooseProduct() {
     setState(() {
-      if (!Data.selectedProducts.contains(widget.data)) {
-        Data.selectedProducts.add(widget.data);
-        ElementOfInstance.show(Data.selectedProducts);
-        widget.data.color = ColorsApp.colorChoose;
-        print("+");
-      } else {
-        Data.selectedProducts.remove(widget.data);
-        print("-");
-        ElementOfInstance.show(Data.selectedProducts);
-        widget.data.color = ColorsApp.colorNoChoose;
-      }
-      /*final navigator = Navigator.of(context);
-      navigator.push(
+      final navigator = Navigator.of(context);
+      navigator.pushReplacement(
         MaterialPageRoute<void> (builder:(context) => ProductInfo(data: widget.data)),
-      );*/
+      );
       widget.function();
     });
   }
@@ -84,7 +73,16 @@ class InstanceWidgetState extends State<InstanceWidget> {
                   Text(widget.data.text, style: TextsStyle.productStyle),
                   const Text('(M,X,L,XL)',
                       style: TextStyle(color: ColorsApp.colorSizeTable)),
-                  Text('${widget.data.count} \$', style: TextsStyle.countStyle),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('${widget.data.count} \$', style: TextsStyle.countStyle),
+                      if (widget.data.amount > 0)...
+                        [const SizedBox(width: 16),
+                        Text('${widget.data.amount}',
+                            style: const TextStyle(color: Colors.black45))]
+                    ],
+                  ),
                 ]),
               ),
             ),

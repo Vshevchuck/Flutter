@@ -17,6 +17,10 @@ class SelectedProductsWidget extends StatefulWidget {
 class _SelectedProductsWidgetState extends State<SelectedProductsWidget> {
   void buyAll() {
     setState(() {
+      for(int i=0;i<Data.products.length;i++)
+        {
+          Data.products[i].amount=0;
+        }
       Data.selectedProducts = [];
       widget.callBack();
     });

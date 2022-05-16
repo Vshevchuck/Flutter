@@ -15,6 +15,15 @@ class NumberOfPurchasesWidget extends StatefulWidget {
 }
 
 class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
+  int countAmount()
+  {
+    int sum=0;
+    for(int i=0;i<Data.selectedProducts.length;i++)
+      {
+            sum+=Data.selectedProducts[i].amount;
+      }
+    return sum;
+  }
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -24,7 +33,7 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
         children: [
           Row(
             children: [
-              Text('${Data.selectedProducts.length}',
+              Text('${countAmount()}',
                   style: const TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black)),
               IconButton(
                 icon: const Icon(Icons.add_shopping_cart_outlined, size: 25,color: Colors.black,),
