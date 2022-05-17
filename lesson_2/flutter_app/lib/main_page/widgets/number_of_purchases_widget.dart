@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/mechanics/data.dart';
-
+import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
 class NumberOfPurchasesWidget extends StatefulWidget {
-  final Function function;
-  final Function function2;
-  const NumberOfPurchasesWidget({
-    Key? key,required this.function,required this.function2
-  }) : super(key: key);
+  final Function callBack;
+
+  const NumberOfPurchasesWidget(
+      {Key? key, required this.callBack})
+      : super(key: key);
 
   @override
   State<NumberOfPurchasesWidget> createState() =>
@@ -15,15 +15,14 @@ class NumberOfPurchasesWidget extends StatefulWidget {
 }
 
 class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
-  int countAmount()
-  {
-    int sum=0;
-    for(int i=0;i<Data.selectedProducts.length;i++)
-      {
-            sum+=Data.selectedProducts[i].amount;
-      }
+  int countAmount() {
+    int sum = 0;
+    for (int i = 0; i < Data.selectedProducts.length; i++) {
+      sum += Data.selectedProducts[i].amount;
+    }
     return sum;
   }
+
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -33,10 +32,13 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
         children: [
           Row(
             children: [
-              Text('${countAmount()}',
-                  style: const TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: Colors.black)),
+              Text('${countAmount()}', style: TextsStyle.sumStyle),
               IconButton(
-                icon: const Icon(Icons.add_shopping_cart_outlined, size: 25,color: Colors.black,),
+                icon: const Icon(
+                  Icons.add_shopping_cart_outlined,
+                  size: 25,
+                  color: Colors.black,
+                ),
                 onPressed: () {
                   Navigator.of(context).pushReplacementNamed('/purchases');
                 },

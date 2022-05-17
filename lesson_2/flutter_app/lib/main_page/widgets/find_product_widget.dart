@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/widgets/products_widget.dart';
 
 class FindProductsWidget extends StatelessWidget {
-  final Function function;
+  final Function callBack;
   const FindProductsWidget({
-    Key? key,required this.function
+    Key? key,required this.callBack
   }) : super(key: key);
 
   void findProduct(String str){
       InstanceRowWidgetState.findProduct = str;
-      function();
+      callBack();
   }
 
   @override

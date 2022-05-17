@@ -48,15 +48,15 @@ class _MainPageState extends State<MainPage> {
           backgroundColor: Colors.white,
           elevation: 2.0,
           toolbarHeight: 100,
-          title: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+          title: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
             // ignore: prefer_const_constructors
             child: SizedBox(
               width: double.infinity,
               height: 110,
               // ignore: prefer_const_constructors
               // Because count amount and costs don't work with const
-              child: HeadWidget(function2: () => setState(() {})),
+              child: HeadWidget(),
             ),
           ),
         ),
@@ -64,8 +64,8 @@ class _MainPageState extends State<MainPage> {
           child: Column(
             children: [
               // ignore: prefer_const_constructor
-              FindProductsWidget(function: () => setState(() {})),
-              SetDiscountWidget(function: () => setState(() {})),
+              FindProductsWidget(callBack: () => setState(() {})),
+              SetDiscountWidget(callBack: () => setState(() {})),
               const CatalogWidget(),
               InstanceRowWidget(
                   instanceRow: Data.products, function: () => setState(() {})),

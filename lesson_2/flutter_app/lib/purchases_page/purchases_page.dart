@@ -46,12 +46,12 @@ class _PurchasesPageState extends State<PurchasesPage> {
         elevation: 2.0,
         toolbarHeight: 100,
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
+          padding: EdgeInsets.symmetric(horizontal: 8),
           // ignore: prefer_const_constructors
           child: SizedBox(
               width: double.infinity,
               height: 110,
-              child: HeadWidget(function2: () => setState(() {}))),
+              child: HeadWidget()),
         ),
       ),
       body: SingleChildScrollView(

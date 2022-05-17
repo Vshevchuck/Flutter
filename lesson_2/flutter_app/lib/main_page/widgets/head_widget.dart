@@ -3,9 +3,8 @@ import 'package:flutter_app3/main_page/widgets/logo_company_widget.dart';
 import 'package:flutter_app3/main_page/widgets/amount_widget.dart';
 import 'package:flutter_app3/main_page/widgets/number_of_purchases_widget.dart';
 class HeadWidget extends StatefulWidget {
-  final Function function2;
   const HeadWidget({
-    Key? key,required this.function2
+    Key? key,
   }) : super(key: key);
 
   
@@ -20,7 +19,7 @@ class HeadWidgetState extends State<HeadWidget> {
       fit: StackFit.loose,
       children: [
         const LogoCompanyWidget(),
-        NumberOfPurchasesWidget(function: ()=> setState((){}),function2 : widget.function2),
+        NumberOfPurchasesWidget(callBack: ()=> setState((){})),
          AmountWidget(),
       ],
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/widgets/head_widget.dart';
 import 'package:flutter_app3/main_page/widgets/products_widget.dart';
 import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
@@ -46,11 +45,11 @@ class _SelectedProductsWidgetState extends State<SelectedProductsWidget> {
               OutlinedButton(
                   onPressed: buyAll,
                   child: const Text('Buy all',
-                      style: TextStyle(color: Colors.black54))),
+                      style: TextsStyle.buyAllTextStyle)),
               OutlinedButton(
                   onPressed: cancel,
                   child: const Text('Back',
-                      style: TextStyle(color: Colors.black54)))
+                      style: TextsStyle.backTextStyle))
             ],
           ),
           const SizedBox(height: 10),

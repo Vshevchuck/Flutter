@@ -80,7 +80,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
                       if (widget.data.amount > 0)...
                         [const SizedBox(width: 16),
                         Text('${widget.data.amount}',
-                            style: const TextStyle(color: Colors.black45))]
+                            style: const TextStyle(color: Colors.black45),),],
                     ],
                   ),
                 ]),

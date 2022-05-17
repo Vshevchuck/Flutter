@@ -2,27 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/widgets/instance_widget.dart';
 
 class SetDiscountWidget extends StatelessWidget {
-  final Function function;
+  final Function callBack;
   const SetDiscountWidget({
-    Key? key,required this.function
+    Key? key,required this.callBack
   }) : super(key: key);
   static bool isSwitched = true;
   void toggleSwitch(bool value) {
     if (isSwitched == false) {
         InstanceWidgetState.checkDiscount=true;
         isSwitched = true;
-        function();
+        callBack();
     } else {
         InstanceWidgetState.checkDiscount=false;
         isSwitched = false;
-        function();
+        callBack();
     }
   }
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('discount'),
+        const Text('Discount'),
         SizedBox(
           width: 35,
           height: 30,

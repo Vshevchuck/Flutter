@@ -3,6 +3,8 @@ import 'package:flutter_app3/utils/colors/colors.dart';
 import 'package:flutter_app3/main_page/widgets/instance_widget.dart';
 import 'package:flutter_app3/mechanics/data.dart';
 
+import '../../utils/text_styles/text_style.dart';
+
 class ElementOfInstance {
   final int count;
   final int discount;
@@ -36,6 +38,11 @@ class InstanceRowWidget extends StatefulWidget {
 class InstanceRowWidgetState extends State<InstanceRowWidget> {
   static String? findProduct;
 
+  void cancel() {
+    findProduct = '';
+    widget.function();
+  }
+
   @override
   Widget build(BuildContext context) {
     if (Data.selectedProducts.isEmpty) {
@@ -46,11 +53,19 @@ class InstanceRowWidgetState extends State<InstanceRowWidget> {
     if (findProduct != null && findProduct != '') {
       for (int i = 0; i < widget.instanceRow.length; i++) {
         if (widget.instanceRow.elementAt(i).text == findProduct) {
-          return InstanceWidget(
-              data: widget.instanceRow.elementAt(i), function: widget.function);
+          return Column(
+            children: [
+              InstanceWidget(
+                  data: widget.instanceRow.elementAt(i),
+                  function: widget.function),
+              OutlinedButton(
+                  onPressed: cancel,
+                  child: const Text('Back', style: TextsStyle.cancelTextStyle))
+            ],
+          );
         }
       }
-      return Text('product not found');
+      return const Text('Product not found');
     }
     return Wrap(
       runSpacing: 10.0,
