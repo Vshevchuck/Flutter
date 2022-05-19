@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/mechanics/data.dart';
+import 'package:flutter_app3/data/data.dart';
 import 'package:flutter_app3/main_page/widgets/catalog_widget.dart';
 import 'package:flutter_app3/main_page/widgets/head_widget.dart';
 import 'package:flutter_app3/main_page/widgets/products_widget.dart';
 import 'package:flutter_app3/main_page/widgets/set_discount_widget.dart';
 
+import '../utils/colors/colors.dart';
 import 'widgets/find_product_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -16,7 +17,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _routeIndex = 0;
-  void onSelectedTab(int index) {
+  void _onSelectedTab(int index) {
     if (_routeIndex == index) return;
     {
       setState(() {
@@ -32,20 +33,19 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _routeIndex,
-          backgroundColor: Colors.black12,
+          backgroundColor: ColorsApp.colorBottomNavigation,
           elevation: 1.0,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Main'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.wallet_travel_rounded), label: 'Purchases')
           ],
-          onTap: onSelectedTab,
+          onTap: _onSelectedTab,
         ),
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: ColorsApp.colorAppBar,
           elevation: 2.0,
           toolbarHeight: 100,
           title: const Padding(
@@ -68,7 +68,7 @@ class _MainPageState extends State<MainPage> {
               SetDiscountWidget(callBack: () => setState(() {})),
               const CatalogWidget(),
               InstanceRowWidget(
-                  instanceRow: Data.products, function: () => setState(() {})),
+                  instanceRow: Data.products, callBack : () => setState(() {})),
             ],
           ),
         ),

@@ -7,7 +7,7 @@ class FindProductsWidget extends StatelessWidget {
     Key? key,required this.callBack
   }) : super(key: key);
 
-  void findProduct(String str){
+  void _findProduct(String str){
       InstanceRowWidgetState.findProduct = str;
       callBack();
   }
@@ -18,7 +18,7 @@ class FindProductsWidget extends StatelessWidget {
       padding: const EdgeInsets.only(top:8.0,right: 16.0, bottom: 8.0,left: 16.0),
       child: TextField(
           onChanged: (String str) {
-            findProduct(str);
+            _findProduct(str);
           },
           cursorHeight: 20,
           decoration: const InputDecoration(

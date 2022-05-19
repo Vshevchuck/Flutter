@@ -1,21 +1,27 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/mechanics/data.dart';
+import 'package:flutter_app3/data/data.dart';
+import 'package:flutter_app3/product_info_page/widgets/one_amount_widget.dart';
+import '../main_page/widgets/amount_widget.dart';
 import '../main_page/widgets/head_widget.dart';
-import '../main_page/widgets/products_widget.dart';
 import '../utils/colors/colors.dart';
+import '../utils/models/models.dart';
 import '../utils/text_styles/text_style.dart';
 
 class ProductInfo extends StatefulWidget {
   final ElementOfInstance data;
 
   const ProductInfo({Key? key, required this.data}) : super(key: key);
+
   @override
   State<ProductInfo> createState() => _ProductInfoState();
 }
 
 class _ProductInfoState extends State<ProductInfo> {
-  void buyOne() {
+  void _home() {
+    Navigator.of(context).pushReplacementNamed('/main');
+  }
+
+  void _buyOne() {
     setState(() {
       if (widget.data.amount == 0) {
         widget.data.amount++;
@@ -28,7 +34,7 @@ class _ProductInfoState extends State<ProductInfo> {
     });
   }
 
-  void putAway() {
+  void _putAway() {
     setState(() {
       if (widget.data.amount == 1) {
         Data.selectedProducts.remove(widget.data);
@@ -41,18 +47,14 @@ class _ProductInfoState extends State<ProductInfo> {
     });
   }
 
-  void home() {
-    Navigator.of(context).pushReplacementNamed('/main');
-  }
-
   @override
   Widget build(BuildContext context) {
-    double appBarSize= 110;
-    var screenHeight = (MediaQuery.of(context).size.height)-appBarSize;
+    double appBarSize = 110;
+    var screenHeight = (MediaQuery.of(context).size.height) - appBarSize;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: ColorsApp.colorAppBar,
           elevation: 2.0,
           toolbarHeight: 100,
           // ignore: prefer_const_constructors
@@ -67,8 +69,8 @@ class _ProductInfoState extends State<ProductInfo> {
           ),
         ),
         body: SingleChildScrollView(
-          child: Container(
-            height: screenHeight,
+          child: SizedBox(
+            height: screenHeight > 625 ? screenHeight : null,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -96,8 +98,9 @@ class _ProductInfoState extends State<ProductInfo> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('${widget.data.count} \$', style: TextsStyle.countStyle),
-                    if (widget.data.amount > 0) AmountWidget(widget: widget),
+                    Text('${widget.data.count} \$',
+                        style: TextsStyle.countStyle),
+                    if (widget.data.amount > 0) OneAmountWidget(widget: widget),
                   ],
                 ),
                 Row(
@@ -105,28 +108,32 @@ class _ProductInfoState extends State<ProductInfo> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       OutlinedButton(
-                        onPressed: buyOne,
+                        onPressed: _buyOne,
                         child: const Text('Buy one',
                             style: TextsStyle.buyOneTextStyle),
                       ),
                       OutlinedButton(
                           style: ButtonStyle(
-                            shape: MaterialStateProperty.all(const RoundedRectangleBorder(
+                            shape: MaterialStateProperty.all(
+                              const RoundedRectangleBorder(
                                 side: BorderSide(
-                                  width: 20,
-                                  color: Colors.grey,
-                                    style: BorderStyle.solid
-                                ),
+                                    width: 20,
+                                    color: ColorsApp.colorButton,
+                                    style: BorderStyle.solid),
                               ),
                             ),
                           ),
-                          onPressed: putAway,
+                          onPressed: _putAway,
                           child: const Text('Put away',
                               style: TextsStyle.putAwayTextStyle)),
                     ]),
                 Align(
                   alignment: Alignment.bottomCenter,
-                child: IconButton(onPressed: home, icon: const Icon(Icons.home),),),
+                  child: IconButton(
+                    onPressed: _home,
+                    icon: const Icon(Icons.home),
+                  ),
+                ),
               ],
             ),
           ),
@@ -136,20 +143,3 @@ class _ProductInfoState extends State<ProductInfo> {
   }
 }
 
-class AmountWidget extends StatelessWidget {
-  const AmountWidget({
-    Key? key,
-    required this.widget,
-  }) : super(key: key);
-
-  final ProductInfo widget;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(children: [
-      const SizedBox(width: 16),
-      Text('${widget.data.amount}',
-          style: const TextStyle(color: Colors.black45))
-    ]);
-  }
-}

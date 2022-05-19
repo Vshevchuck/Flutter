@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/main_page/widgets/products_widget.dart';
 import 'package:flutter_app3/utils/text_styles/text_style.dart';
-import 'package:flutter_app3/mechanics/data.dart';
-
 import 'package:flutter_app3/utils/colors/colors.dart';
 import '../../product_info_page/product_info_page.dart';
+import '../../utils/models/models.dart';
 import 'discount_widget.dart';
 
 class InstanceWidget extends StatefulWidget {
   final ElementOfInstance data;
-  final Function function;
-  const InstanceWidget({Key? key, required this.data, required this.function})
+  final Function callBack;
+  const InstanceWidget({Key? key, required this.data, required this.callBack})
       : super(key: key);
   @override
   State<InstanceWidget> createState() => InstanceWidgetState();
@@ -20,13 +18,13 @@ class InstanceWidgetState extends State<InstanceWidget> {
 
   static bool checkDiscount = true;
 
-  void chooseProduct() {
+  void _chooseProduct() {
     setState(() {
       final navigator = Navigator.of(context);
       navigator.pushReplacement(
         MaterialPageRoute<void> (builder:(context) => ProductInfo(data: widget.data)),
       );
-      widget.function();
+      widget.callBack();
     });
   }
 
@@ -44,7 +42,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
       child: InkWell(
         splashColor: ColorsApp.colorClick,
         onTap: () {
-          chooseProduct();
+          _chooseProduct();
         },
         child: Ink(
           child: Padding(
@@ -80,7 +78,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
                       if (widget.data.amount > 0)...
                         [const SizedBox(width: 16),
                         Text('${widget.data.amount}',
-                            style: const TextStyle(color: Colors.black45),),],
+                            style: TextsStyle.productAmount,),],
                     ],
                   ),
                 ]),

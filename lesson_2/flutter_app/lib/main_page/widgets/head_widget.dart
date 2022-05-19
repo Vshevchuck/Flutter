@@ -20,6 +20,7 @@ class HeadWidgetState extends State<HeadWidget> {
       children: [
         const LogoCompanyWidget(),
         NumberOfPurchasesWidget(callBack: ()=> setState((){})),
+         // ignore: prefer_const_constructors
          AmountWidget(),
       ],
     );

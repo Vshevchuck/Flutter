@@ -1,5 +1,5 @@
-import '../main_page/widgets/products_widget.dart';
 import '../utils/images/images_name.dart';
+import '../utils/models/models.dart';
 
 abstract class Data {
   static List<ElementOfInstance> selectedProducts = [];

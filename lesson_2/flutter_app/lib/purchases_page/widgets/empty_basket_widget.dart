@@ -7,7 +7,7 @@ class EmptyBasketWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void cancel() {
+    void _cancel() {
       Navigator.of(context).pushReplacementNamed('/main');
     }
 
@@ -19,7 +19,7 @@ class EmptyBasketWidget extends StatelessWidget {
             style: TextsStyle.emptyBasketTextStyle),
         const SizedBox(height: 15),
         OutlinedButton(
-            onPressed: cancel,
+            onPressed: _cancel,
             child: const Text('Back', style: TextsStyle.cancelTextStyle))
       ],
     ));

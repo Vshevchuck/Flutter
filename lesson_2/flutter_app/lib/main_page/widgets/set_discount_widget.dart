@@ -7,7 +7,7 @@ class SetDiscountWidget extends StatelessWidget {
     Key? key,required this.callBack
   }) : super(key: key);
   static bool isSwitched = true;
-  void toggleSwitch(bool value) {
+  void _toggleSwitch(bool value) {
     if (isSwitched == false) {
         InstanceWidgetState.checkDiscount=true;
         isSwitched = true;
@@ -30,7 +30,7 @@ class SetDiscountWidget extends StatelessWidget {
             fit: BoxFit.fill,
             child: Switch(
               value: isSwitched,
-              onChanged: toggleSwitch,
+              onChanged: _toggleSwitch,
             ),
           ),
         )

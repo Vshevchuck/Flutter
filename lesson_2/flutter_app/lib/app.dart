@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/main_page/main_page.dart';
-import 'package:flutter_app3/product_info_page/product_info_page.dart';
-import 'package:flutter_app3/mechanics/data.dart';
 import 'purchases_page/purchases_page.dart';
 
 class App extends StatelessWidget {

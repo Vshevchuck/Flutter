@@ -1,34 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/utils/colors/colors.dart';
 import 'package:flutter_app3/main_page/widgets/instance_widget.dart';
-import 'package:flutter_app3/mechanics/data.dart';
+import 'package:flutter_app3/data/data.dart';
 
+import '../../utils/models/models.dart';
 import '../../utils/text_styles/text_style.dart';
-
-class ElementOfInstance {
-  final int count;
-  final int discount;
-  final String text;
-  final String image;
-  Color color = ColorsApp.colorNoChoose;
-  int amount = 0;
-
-  ElementOfInstance(this.count, this.discount, this.text, this.image);
-
-  static void show(List<ElementOfInstance> product) {
-    for (int i = 0; i < product.length; i++) {
-      print('${product[i].text} - ${product[i].color}');
-    }
-    print('----------');
-  }
-}
 
 class InstanceRowWidget extends StatefulWidget {
   final List<ElementOfInstance> instanceRow;
-  final Function function;
+  final Function callBack;
 
   const InstanceRowWidget(
-      {Key? key, required this.instanceRow, required this.function})
+      {Key? key, required this.instanceRow, required this.callBack})
       : super(key: key);
 
   @override
@@ -38,9 +21,9 @@ class InstanceRowWidget extends StatefulWidget {
 class InstanceRowWidgetState extends State<InstanceRowWidget> {
   static String? findProduct;
 
-  void cancel() {
+  void _cancel() {
     findProduct = '';
-    widget.function();
+    widget.callBack();
   }
 
   @override
@@ -57,9 +40,9 @@ class InstanceRowWidgetState extends State<InstanceRowWidget> {
             children: [
               InstanceWidget(
                   data: widget.instanceRow.elementAt(i),
-                  function: widget.function),
+                  callBack: widget.callBack),
               OutlinedButton(
-                  onPressed: cancel,
+                  onPressed: _cancel,
                   child: const Text('Back', style: TextsStyle.cancelTextStyle))
             ],
           );
@@ -71,7 +54,7 @@ class InstanceRowWidgetState extends State<InstanceRowWidget> {
       runSpacing: 10.0,
       spacing: 10.0,
       children: widget.instanceRow
-          .map((data) => InstanceWidget(data: data, function: widget.function))
+          .map((data) => InstanceWidget(data: data, callBack: widget.callBack))
           .toList(),
     );
   }

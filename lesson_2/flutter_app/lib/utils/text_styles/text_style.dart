@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 abstract class TextsStyle {
+  static const productAmount = TextStyle(color: Colors.black45);
   static const backTextStyle= TextStyle(color: Colors.black54,fontSize: 16);
   static const buyAllTextStyle = TextStyle(color: Colors.black54,fontSize: 16);
   static const cancelTextStyle = TextStyle(color: Colors.black54,fontSize: 16);

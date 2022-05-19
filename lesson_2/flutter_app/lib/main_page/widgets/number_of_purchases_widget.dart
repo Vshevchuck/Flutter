@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/mechanics/data.dart';
+import 'package:flutter_app3/data/data.dart';
 import 'package:flutter_app3/utils/text_styles/text_style.dart';
+
+import '../../utils/colors/colors.dart';
 
 class NumberOfPurchasesWidget extends StatefulWidget {
   final Function callBack;
@@ -15,7 +17,7 @@ class NumberOfPurchasesWidget extends StatefulWidget {
 }
 
 class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
-  int countAmount() {
+  int _countAmount() {
     int sum = 0;
     for (int i = 0; i < Data.selectedProducts.length; i++) {
       sum += Data.selectedProducts[i].amount;
@@ -32,12 +34,12 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
         children: [
           Row(
             children: [
-              Text('${countAmount()}', style: TextsStyle.sumStyle),
+              Text('${_countAmount()}', style: TextsStyle.sumStyle),
               IconButton(
                 icon: const Icon(
                   Icons.add_shopping_cart_outlined,
                   size: 25,
-                  color: Colors.black,
+                  color: ColorsApp.colorBasketIcon,
                 ),
                 onPressed: () {
                   Navigator.of(context).pushReplacementNamed('/purchases');

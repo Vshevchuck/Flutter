@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/mechanics/data.dart';
+import 'package:flutter_app3/data/data.dart';
 import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
 class AmountWidget extends StatefulWidget {
