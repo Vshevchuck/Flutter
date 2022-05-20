@@ -8,8 +8,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      routes: {'/main' :(context)=>MainPage(),
-      '/purchases' : (context)=>PurchasesPage()},
+      routes: {'/main' :(context)=>const MainPage(),
+      '/purchases' : (context)=>const PurchasesPage()},
       initialRoute: '/main',
     );
   }

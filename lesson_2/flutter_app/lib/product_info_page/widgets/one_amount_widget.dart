@@ -5,6 +5,7 @@ import '../product_info_page.dart';
 
 class OneAmountWidget extends StatelessWidget {
   final ProductInfo widget;
+
   const OneAmountWidget({
     Key? key,
     required this.widget,

@@ -15,20 +15,6 @@ class SelectedProductsWidget extends StatefulWidget {
 }
 
 class _SelectedProductsWidgetState extends State<SelectedProductsWidget> {
-  void _cancel() {
-    Navigator.of(context).pushReplacementNamed('/main');
-  }
-
-  void _buyAll() {
-    setState(() {
-      for (int i = 0; i < Data.products.length; i++) {
-        Data.products[i].amount = 0;
-      }
-      Data.selectedProducts = [];
-      widget.callBack();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -56,5 +42,17 @@ class _SelectedProductsWidgetState extends State<SelectedProductsWidget> {
         ],
       ),
     );
+  }
+
+  void _cancel() {
+    Navigator.of(context).pushReplacementNamed('/main');
+  }
+
+  void _buyAll() {
+    for (int i = 0; i < Data.products.length; i++) {
+      Data.products[i].amount = 0;
+    }
+    Data.selectedProducts = [];
+    widget.callBack();
   }
 }

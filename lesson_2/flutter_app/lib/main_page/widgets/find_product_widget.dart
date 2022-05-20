@@ -3,19 +3,15 @@ import 'package:flutter_app3/main_page/widgets/products_widget.dart';
 
 class FindProductsWidget extends StatelessWidget {
   final Function callBack;
-  const FindProductsWidget({
-    Key? key,required this.callBack
-  }) : super(key: key);
 
-  void _findProduct(String str){
-      InstanceRowWidgetState.findProduct = str;
-      callBack();
-  }
+  const FindProductsWidget({Key? key, required this.callBack})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top:8.0,right: 16.0, bottom: 8.0,left: 16.0),
+      padding:
+          const EdgeInsets.only(top: 8.0, right: 16.0, bottom: 8.0, left: 16.0),
       child: TextField(
           onChanged: (String str) {
             _findProduct(str);
@@ -27,5 +23,10 @@ class FindProductsWidget extends StatelessWidget {
               prefixIcon: Icon(Icons.zoom_in_sharp),
               isCollapsed: true)),
     );
+  }
+
+  void _findProduct(String str) {
+    InstanceRowWidget.findProduct = str;
+    callBack();
   }
 }

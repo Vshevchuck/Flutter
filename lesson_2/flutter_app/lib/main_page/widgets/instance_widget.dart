@@ -18,16 +18,6 @@ class InstanceWidgetState extends State<InstanceWidget> {
 
   static bool checkDiscount = true;
 
-  void _chooseProduct() {
-    setState(() {
-      final navigator = Navigator.of(context);
-      navigator.pushReplacement(
-        MaterialPageRoute<void> (builder:(context) => ProductInfo(data: widget.data)),
-      );
-      widget.callBack();
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     Widget? discount;
@@ -88,5 +78,12 @@ class InstanceWidgetState extends State<InstanceWidget> {
         ),
       ),
     );
+  }
+  void _chooseProduct() {
+      final navigator = Navigator.of(context);
+      navigator.pushReplacement(
+        MaterialPageRoute<void> (builder:(context) => ProductInfo(data: widget.data)),
+      );
+      widget.callBack();
   }
 }

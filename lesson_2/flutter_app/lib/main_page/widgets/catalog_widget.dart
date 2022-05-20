@@ -13,7 +13,7 @@ class CatalogWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Row(
-        mainAxisSize : MainAxisSize.max,
+        mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Expanded(
@@ -29,8 +29,8 @@ class CatalogWidget extends StatelessWidget {
                 child: const Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: Center(
-                    child: Text('hoody',
-                        style: TextsStyle.selectedCatalogStyle),
+                    child:
+                        Text('hoody', style: TextsStyle.selectedCatalogStyle),
                   ),
                 )),
           ),
@@ -38,8 +38,7 @@ class CatalogWidget extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(bottom: 10.0),
               child: Center(
-                child: Text('jeans',
-                    style: TextsStyle.catalogStyle),
+                child: Text('jeans', style: TextsStyle.catalogStyle),
               ),
             ),
           ),

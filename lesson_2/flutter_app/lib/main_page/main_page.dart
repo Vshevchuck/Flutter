@@ -17,17 +17,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _routeIndex = 0;
-  void _onSelectedTab(int index) {
-    if (_routeIndex == index) return;
-    {
-      setState(() {
-        _routeIndex = index;
-        if (_routeIndex == 1) {
-          Navigator.of(context).pushReplacementNamed('/purchases');
-        }
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +57,21 @@ class _MainPageState extends State<MainPage> {
               SetDiscountWidget(callBack: () => setState(() {})),
               const CatalogWidget(),
               InstanceRowWidget(
-                  instanceRow: Data.products, callBack : () => setState(() {})),
+                  instanceRow: Data.products, callBack: () => setState(() {})),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _onSelectedTab(int index) {
+    if (_routeIndex == index) return;
+    {
+      _routeIndex = index;
+      if (_routeIndex == 1) {
+        Navigator.of(context).pushReplacementNamed('/purchases');
+      }
+    }
   }
 }

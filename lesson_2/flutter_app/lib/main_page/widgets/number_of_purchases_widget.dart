@@ -4,51 +4,40 @@ import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
 import '../../utils/colors/colors.dart';
 
-class NumberOfPurchasesWidget extends StatefulWidget {
+class NumberOfPurchasesWidget extends StatelessWidget {
   final Function callBack;
 
-  const NumberOfPurchasesWidget(
-      {Key? key, required this.callBack})
+  const NumberOfPurchasesWidget({Key? key, required this.callBack})
       : super(key: key);
-
-  @override
-  State<NumberOfPurchasesWidget> createState() =>
-      _NumberOfPurchasesWidgetState();
-}
-
-class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
-  int _countAmount() {
-    int sum = 0;
-    for (int i = 0; i < Data.selectedProducts.length; i++) {
-      sum += Data.selectedProducts[i].amount;
-    }
-    return sum;
-  }
 
   @override
   Widget build(BuildContext context) {
     return Positioned(
       right: 10,
       bottom: 0,
-      child: Column(
+      child: Row(
         children: [
-          Row(
-            children: [
-              Text('${_countAmount()}', style: TextsStyle.sumStyle),
-              IconButton(
-                icon: const Icon(
-                  Icons.add_shopping_cart_outlined,
-                  size: 25,
-                  color: ColorsApp.colorBasketIcon,
-                ),
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/purchases');
-                },
-              )
-            ],
-          ),
+          Text('${_countAmount()}', style: TextsStyle.sumStyle),
+          IconButton(
+            icon: const Icon(
+              Icons.add_shopping_cart_outlined,
+              size: 25,
+              color: ColorsApp.colorBasketIcon,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed('/purchases');
+            },
+          )
         ],
       ),
     );
+  }
+
+  int _countAmount() {
+    int sum = 0;
+    for (int i = 0; i < Data.selectedProducts.length; i++) {
+      sum += Data.selectedProducts[i].amount;
+    }
+    return sum;
   }
 }

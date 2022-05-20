@@ -6,7 +6,7 @@ import 'package:flutter_app3/data/data.dart';
 import '../../utils/models/models.dart';
 import '../../utils/text_styles/text_style.dart';
 
-class InstanceRowWidget extends StatefulWidget {
+class InstanceRowWidget extends StatelessWidget {
   final List<ElementOfInstance> instanceRow;
   final Function callBack;
 
@@ -14,33 +14,22 @@ class InstanceRowWidget extends StatefulWidget {
       {Key? key, required this.instanceRow, required this.callBack})
       : super(key: key);
 
-  @override
-  State<InstanceRowWidget> createState() => InstanceRowWidgetState();
-}
-
-class InstanceRowWidgetState extends State<InstanceRowWidget> {
   static String? findProduct;
-
-  void _cancel() {
-    findProduct = '';
-    widget.callBack();
-  }
 
   @override
   Widget build(BuildContext context) {
     if (Data.selectedProducts.isEmpty) {
-      for (int i = 0; i < widget.instanceRow.length; i++) {
-        widget.instanceRow.elementAt(i).color = ColorsApp.colorNoChoose;
+      for (int i = 0; i < instanceRow.length; i++) {
+        instanceRow.elementAt(i).color = ColorsApp.colorNoChoose;
       }
     }
     if (findProduct != null && findProduct != '') {
-      for (int i = 0; i < widget.instanceRow.length; i++) {
-        if (widget.instanceRow.elementAt(i).text == findProduct) {
+      for (int i = 0; i < instanceRow.length; i++) {
+        if (instanceRow.elementAt(i).text == findProduct) {
           return Column(
             children: [
               InstanceWidget(
-                  data: widget.instanceRow.elementAt(i),
-                  callBack: widget.callBack),
+                  data: instanceRow.elementAt(i), callBack: callBack),
               OutlinedButton(
                   onPressed: _cancel,
                   child: const Text('Back', style: TextsStyle.cancelTextStyle))
@@ -53,9 +42,14 @@ class InstanceRowWidgetState extends State<InstanceRowWidget> {
     return Wrap(
       runSpacing: 10.0,
       spacing: 10.0,
-      children: widget.instanceRow
-          .map((data) => InstanceWidget(data: data, callBack: widget.callBack))
+      children: instanceRow
+          .map((data) => InstanceWidget(data: data, callBack: callBack))
           .toList(),
     );
+  }
+
+  void _cancel() {
+    findProduct = '';
+    callBack();
   }
 }

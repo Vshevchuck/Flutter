@@ -16,18 +16,6 @@ class PurchasesPage extends StatefulWidget {
 class _PurchasesPageState extends State<PurchasesPage> {
   int _routeIndex = 1;
 
-  void onSelectedTab(int index) {
-    if (_routeIndex == index) return;
-    {
-      setState(() {
-        _routeIndex = index;
-        if (_routeIndex == 0) {
-          Navigator.of(context).pushReplacementNamed('/main');
-        }
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,5 +52,15 @@ class _PurchasesPageState extends State<PurchasesPage> {
             : SelectedProductsWidget(callBack: () => setState(() {})),
       ),
     );
+  }
+
+  void onSelectedTab(int index) {
+    if (_routeIndex == index) return;
+    {
+      _routeIndex = index;
+      if (_routeIndex == 0) {
+        Navigator.of(context).pushReplacementNamed('/main');
+      }
+    }
   }
 }

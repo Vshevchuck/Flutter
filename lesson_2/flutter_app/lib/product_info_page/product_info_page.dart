@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/data/data.dart';
 import 'package:flutter_app3/product_info_page/widgets/one_amount_widget.dart';
-import '../main_page/widgets/amount_widget.dart';
 import '../main_page/widgets/head_widget.dart';
 import '../utils/colors/colors.dart';
 import '../utils/models/models.dart';
@@ -17,36 +16,6 @@ class ProductInfo extends StatefulWidget {
 }
 
 class _ProductInfoState extends State<ProductInfo> {
-  void _home() {
-    Navigator.of(context).pushReplacementNamed('/main');
-  }
-
-  void _buyOne() {
-    setState(() {
-      if (widget.data.amount == 0) {
-        widget.data.amount++;
-        Data.selectedProducts.add(widget.data);
-        widget.data.color = ColorsApp.colorChoose;
-      } else {
-        Data.selectedProducts[Data.selectedProducts.indexOf(widget.data)]
-            .amount++;
-      }
-    });
-  }
-
-  void _putAway() {
-    setState(() {
-      if (widget.data.amount == 1) {
-        Data.selectedProducts.remove(widget.data);
-        widget.data.amount--;
-        widget.data.color = ColorsApp.colorNoChoose;
-      } else if (widget.data.amount > 1) {
-        Data.selectedProducts[Data.selectedProducts.indexOf(widget.data)]
-            .amount--;
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     double appBarSize = 110;
@@ -141,5 +110,32 @@ class _ProductInfoState extends State<ProductInfo> {
       ),
     );
   }
-}
 
+  void _home() {
+    Navigator.of(context).pushReplacementNamed('/main');
+  }
+
+  void _buyOne() {
+    setState(() {
+      if (widget.data.amount == 0) {
+        widget.data.amount++;
+        Data.selectedProducts.add(widget.data);
+        widget.data.color = ColorsApp.colorChoose;
+      } else {
+        Data.selectedProducts[Data.selectedProducts.indexOf(widget.data)]
+            .amount++;
+      }
+    });
+  }
+
+  void _putAway() {
+    if (widget.data.amount == 1) {
+      Data.selectedProducts.remove(widget.data);
+      widget.data.amount--;
+      widget.data.color = ColorsApp.colorNoChoose;
+    } else if (widget.data.amount > 1) {
+      Data.selectedProducts[Data.selectedProducts.indexOf(widget.data)]
+          .amount--;
+    }
+  }
+}
