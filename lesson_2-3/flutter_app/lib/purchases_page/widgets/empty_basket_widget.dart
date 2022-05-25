@@ -8,7 +8,7 @@ class EmptyBasketWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     void _cancel() {
-      Navigator.of(context).pushReplacementNamed('/main');
+      Navigator.pop(context);
     }
 
     return Center(

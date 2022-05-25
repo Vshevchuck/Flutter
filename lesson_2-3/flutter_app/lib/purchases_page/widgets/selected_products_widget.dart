@@ -45,7 +45,7 @@ class _SelectedProductsWidgetState extends State<SelectedProductsWidget> {
   }
 
   void _cancel() {
-    Navigator.of(context).pushReplacementNamed('/main');
+    Navigator.pop(context);
   }
 
   void _buyAll() {

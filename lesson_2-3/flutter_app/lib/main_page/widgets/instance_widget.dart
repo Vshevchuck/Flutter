@@ -8,14 +8,15 @@ import 'discount_widget.dart';
 class InstanceWidget extends StatefulWidget {
   final ElementOfInstance data;
   final Function callBack;
+
   const InstanceWidget({Key? key, required this.data, required this.callBack})
       : super(key: key);
+
   @override
   State<InstanceWidget> createState() => InstanceWidgetState();
 }
 
 class InstanceWidgetState extends State<InstanceWidget> {
-
   static bool checkDiscount = true;
 
   @override
@@ -32,7 +33,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
       child: InkWell(
         splashColor: ColorsApp.colorClick,
         onTap: () {
-          _chooseProduct();
+          _chooseProduct(widget.callBack);
         },
         child: Ink(
           child: Padding(
@@ -64,11 +65,15 @@ class InstanceWidgetState extends State<InstanceWidget> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('${widget.data.count} \$', style: TextsStyle.countStyle),
-                      if (widget.data.amount > 0)...
-                        [const SizedBox(width: 16),
-                        Text('${widget.data.amount}',
-                            style: TextsStyle.productAmount,),],
+                      Text('${widget.data.count} \$',
+                          style: TextsStyle.countStyle),
+                      if (widget.data.amount > 0) ...[
+                        const SizedBox(width: 16),
+                        Text(
+                          '${widget.data.amount}',
+                          style: TextsStyle.productAmount,
+                        ),
+                      ],
                     ],
                   ),
                 ]),
@@ -79,11 +84,15 @@ class InstanceWidgetState extends State<InstanceWidget> {
       ),
     );
   }
-  void _chooseProduct() {
-      final navigator = Navigator.of(context);
-      navigator.pushReplacement(
-        MaterialPageRoute<void> (builder:(context) => ProductInfo(data: widget.data)),
-      );
-      widget.callBack();
+
+  void _chooseProduct(callBack) {
+    final navigator = Navigator.of(context);
+    navigator
+        .push(
+          MaterialPageRoute<void>(
+              builder: (context) => ProductInfo(data: widget.data)),
+        )
+        .then((value) => setState(() {}));
+    widget.callBack();
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app3/data/data.dart';
+import 'package:flutter_app3/main_page/main_page.dart';
 import 'package:flutter_app3/product_info_page/widgets/one_amount_widget.dart';
 import '../main_page/widgets/head_widget.dart';
 import '../utils/colors/colors.dart';
@@ -8,7 +9,6 @@ import '../utils/text_styles/text_style.dart';
 
 class ProductInfo extends StatefulWidget {
   final ElementOfInstance data;
-
   const ProductInfo({Key? key, required this.data}) : super(key: key);
 
   @override
@@ -112,7 +112,7 @@ class _ProductInfoState extends State<ProductInfo> {
   }
 
   void _home() {
-    Navigator.of(context).pushReplacementNamed('/main');
+    Navigator.pop(context);
   }
 
   void _buyOne() {
@@ -129,13 +129,15 @@ class _ProductInfoState extends State<ProductInfo> {
   }
 
   void _putAway() {
-    if (widget.data.amount == 1) {
-      Data.selectedProducts.remove(widget.data);
-      widget.data.amount--;
-      widget.data.color = ColorsApp.colorNoChoose;
-    } else if (widget.data.amount > 1) {
-      Data.selectedProducts[Data.selectedProducts.indexOf(widget.data)]
-          .amount--;
-    }
+    setState(() {
+      if (widget.data.amount == 1) {
+        Data.selectedProducts.remove(widget.data);
+        widget.data.amount--;
+        widget.data.color = ColorsApp.colorNoChoose;
+      } else if (widget.data.amount > 1) {
+        Data.selectedProducts[Data.selectedProducts.indexOf(widget.data)]
+            .amount--;
+      }
+    });
   }
 }

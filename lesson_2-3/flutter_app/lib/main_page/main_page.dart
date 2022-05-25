@@ -16,23 +16,11 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _routeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _routeIndex,
-          backgroundColor: ColorsApp.colorBottomNavigation,
-          elevation: 1.0,
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Main'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.wallet_travel_rounded), label: 'Purchases')
-          ],
-          onTap: _onSelectedTab,
-        ),
         appBar: AppBar(
           backgroundColor: ColorsApp.colorAppBar,
           elevation: 2.0,
@@ -63,15 +51,5 @@ class _MainPageState extends State<MainPage> {
         ),
       ),
     );
-  }
-
-  void _onSelectedTab(int index) {
-    if (_routeIndex == index) return;
-    {
-      _routeIndex = index;
-      if (_routeIndex == 1) {
-        Navigator.of(context).pushReplacementNamed('/purchases');
-      }
-    }
   }
 }

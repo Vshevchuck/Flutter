@@ -8,29 +8,16 @@ import '../data/data.dart';
 
 class PurchasesPage extends StatefulWidget {
   const PurchasesPage({Key? key}) : super(key: key);
-
   @override
   State<PurchasesPage> createState() => _PurchasesPageState();
 }
 
 class _PurchasesPageState extends State<PurchasesPage> {
-  int _routeIndex = 1;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _routeIndex,
-        backgroundColor: ColorsApp.colorBottomNavigation,
-        elevation: 1.0,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Main'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.wallet_travel_rounded), label: 'Purchases')
-        ],
-        onTap: onSelectedTab,
-      ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: ColorsApp.colorAppBar,
         elevation: 2.0,
         toolbarHeight: 100,
@@ -52,15 +39,5 @@ class _PurchasesPageState extends State<PurchasesPage> {
             : SelectedProductsWidget(callBack: () => setState(() {})),
       ),
     );
-  }
-
-  void onSelectedTab(int index) {
-    if (_routeIndex == index) return;
-    {
-      _routeIndex = index;
-      if (_routeIndex == 0) {
-        Navigator.of(context).pushReplacementNamed('/main');
-      }
-    }
   }
 }

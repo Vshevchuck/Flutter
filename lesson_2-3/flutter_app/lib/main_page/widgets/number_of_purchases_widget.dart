@@ -4,12 +4,17 @@ import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
 import '../../utils/colors/colors.dart';
 
-class NumberOfPurchasesWidget extends StatelessWidget {
+class NumberOfPurchasesWidget extends StatefulWidget {
   final Function callBack;
 
   const NumberOfPurchasesWidget({Key? key, required this.callBack})
       : super(key: key);
 
+  @override
+  State<NumberOfPurchasesWidget> createState() => _NumberOfPurchasesWidgetState();
+}
+
+class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -25,7 +30,7 @@ class NumberOfPurchasesWidget extends StatelessWidget {
               color: ColorsApp.colorBasketIcon,
             ),
             onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/purchases');
+              Navigator.of(context).pushNamed('/purchases').then((value) => setState(() {}));
             },
           )
         ],
