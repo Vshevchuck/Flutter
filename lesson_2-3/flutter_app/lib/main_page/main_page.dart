@@ -25,7 +25,8 @@ class _MainPageState extends State<MainPage> {
           backgroundColor: ColorsApp.colorAppBar,
           elevation: 2.0,
           toolbarHeight: 100,
-          title: const Padding(
+          // ignore: prefer_const_constructors
+          title: Padding(
             padding: EdgeInsets.symmetric(horizontal: 8),
             // ignore: prefer_const_constructors
             child: SizedBox(

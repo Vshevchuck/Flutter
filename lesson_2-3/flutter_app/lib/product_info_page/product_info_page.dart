@@ -23,6 +23,7 @@ class _ProductInfoState extends State<ProductInfo> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: ColorsApp.colorAppBar,
           elevation: 2.0,
           toolbarHeight: 100,

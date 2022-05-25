@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app3/data/data.dart';
 import 'package:flutter_app3/utils/text_styles/text_style.dart';
 
-class AmountWidget extends StatelessWidget {
+class AmountWidget extends StatefulWidget {
   const AmountWidget({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<AmountWidget> createState() => _AmountWidgetState();
+}
+
+class _AmountWidgetState extends State<AmountWidget> {
   @override
   Widget build(BuildContext context) {
     return Positioned(

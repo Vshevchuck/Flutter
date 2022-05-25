@@ -33,7 +33,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
       child: InkWell(
         splashColor: ColorsApp.colorClick,
         onTap: () {
-          _chooseProduct(widget.callBack);
+          _chooseProduct();
         },
         child: Ink(
           child: Padding(
@@ -85,7 +85,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
     );
   }
 
-  void _chooseProduct(callBack) {
+  void _chooseProduct() {
     final navigator = Navigator.of(context);
     navigator
         .push(
