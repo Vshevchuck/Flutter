@@ -30,7 +30,7 @@ class _NumberOfPurchasesWidgetState extends State<NumberOfPurchasesWidget> {
               color: ColorsApp.colorBasketIcon,
             ),
             onPressed: () {
-              Navigator.of(context).pushNamed('/purchases').then((value) => setState(() {}));
+              Navigator.of(context).pushNamed('/purchases').then((value) => widget.callBack());
             },
           )
         ],

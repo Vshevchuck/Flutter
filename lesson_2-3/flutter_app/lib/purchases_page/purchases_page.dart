@@ -8,6 +8,7 @@ import '../data/data.dart';
 
 class PurchasesPage extends StatefulWidget {
   const PurchasesPage({Key? key}) : super(key: key);
+
   @override
   State<PurchasesPage> createState() => _PurchasesPageState();
 }
@@ -29,7 +30,7 @@ class _PurchasesPageState extends State<PurchasesPage> {
               width: double.infinity,
               height: 110,
               // ignore: prefer_const_constructors
-              child: HeadWidget()),
+              child: HeadWidget(callBack: () => setState(() {}))),
         ),
       ),
       body: SingleChildScrollView(

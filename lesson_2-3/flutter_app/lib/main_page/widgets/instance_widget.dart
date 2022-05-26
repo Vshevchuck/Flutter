@@ -92,7 +92,7 @@ class InstanceWidgetState extends State<InstanceWidget> {
           MaterialPageRoute<void>(
               builder: (context) => ProductInfo(data: widget.data)),
         )
-        .then((value) => setState(() {}));
-    widget.callBack();
+        .then((value) => widget.callBack());
+
   }
 }

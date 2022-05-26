@@ -35,7 +35,7 @@ class _ProductInfoState extends State<ProductInfo> {
                 width: double.infinity,
                 height: appBarSize,
                 // ignore: prefer_const_constructors
-                child: HeadWidget()),
+                child: HeadWidget(callBack: () => setState(() {}))),
           ),
         ),
         body: SingleChildScrollView(

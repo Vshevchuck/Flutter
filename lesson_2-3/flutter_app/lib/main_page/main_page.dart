@@ -34,7 +34,7 @@ class _MainPageState extends State<MainPage> {
               height: 110,
               // ignore: prefer_const_constructors
               // Because count amount and costs don't work with const
-              child: HeadWidget(),
+              child: HeadWidget(callBack: () => setState(() {})),
             ),
           ),
         ),

@@ -4,8 +4,9 @@ import 'package:flutter_app3/main_page/widgets/amount_widget.dart';
 import 'package:flutter_app3/main_page/widgets/number_of_purchases_widget.dart';
 
 class HeadWidget extends StatefulWidget {
+  final Function callBack;
   const HeadWidget({
-    Key? key,
+    Key? key, required this.callBack
   }) : super(key: key);
 
   @override
@@ -19,7 +20,7 @@ class HeadWidgetState extends State<HeadWidget> {
       fit: StackFit.loose,
       children: [
         const LogoCompanyWidget(),
-        NumberOfPurchasesWidget(callBack: () => setState(() {})),
+        NumberOfPurchasesWidget(callBack : widget.callBack),
         // ignore: prefer_const_constructors
         AmountWidget(),
       ],
