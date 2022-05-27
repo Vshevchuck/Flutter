@@ -48,6 +48,14 @@ class _SecondPageState extends State<SecondPage> {
                     onPrimary: Colors.white, // foreground
                   ),
                 ),
+                ElevatedButton(
+                  onPressed: _goChange,
+                  child: const Text('pop and push'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white70, // background
+                    onPrimary: Colors.white, // foreground
+                  ),
+                ),
               ],
             ),
           ),
@@ -61,9 +69,15 @@ class _SecondPageState extends State<SecondPage> {
   }
 
   void _back() {
-    Navigator.of(context).pop();
+    Navigator.of(context).maybePop();
+  }
+  void _goChange() {
+    if(Navigator.of(context).canPop())
+      {
+        Navigator.of(context).popAndPushNamed('/third');
+      }
   }
   void _backAndRemoveAll() {
-    Navigator.of(context).pushNamedAndRemoveUntil('/second', ModalRoute.withName('/'));
+    Navigator.of(context).pushNamedAndRemoveUntil('/first', ModalRoute.withName('/'));
   }
 }

@@ -42,8 +42,16 @@ class _ThirdPageState extends State<ThirdPage> {
                   ),
                 ),
                 ElevatedButton(
-                  onPressed: _back,
-                  child: const Text('Back'),
+                  onPressed: _backToFirst,
+                  child: const Text('Back to first'),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white70, // background
+                    onPrimary: Colors.white, // foreground
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: _deleteSecondRoute,
+                  child: const Text('Delete second page route'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white70, // background
                     onPrimary: Colors.white, // foreground
@@ -56,11 +64,17 @@ class _ThirdPageState extends State<ThirdPage> {
       ),
     );
   }
-
+  //??????
+  void _deleteSecondRoute(){
+   Navigator.removeRoute(context, MaterialPageRoute(builder: (context) => SecondPage()));
+  }
   void _go() {
     Navigator.of(context).pushNamed('/first');
   }
 
+  void _backToFirst() {
+    Navigator.popUntil(context, ModalRoute.withName('/first'));
+  }
 
 
   void _back() {

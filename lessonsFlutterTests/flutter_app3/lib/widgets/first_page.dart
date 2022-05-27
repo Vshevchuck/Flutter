@@ -62,6 +62,14 @@ class _FirstPageState extends State<FirstPage> {
   void _goChange() {
     Navigator.of(context).pushReplacementNamed('/second');
   }
+  /*
+     Navigator.replace(
+      context,
+      oldRoute: MaterialPageRoute(builder: (context) => OlRoute()),
+      newRoute: MaterialPageRoute(builder: (context) => NewRoute()),
+      );
+   */
+  //Navigator.replaceRouteBelow(context, anchorRoute: anchorRoute, newRoute: newRoute)
   void _creatingChain(){
     Navigator.defaultGenerateInitialRoutes(Navigator.of(context), '/third/second');
   }
