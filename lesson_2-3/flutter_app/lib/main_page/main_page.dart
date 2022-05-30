@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app3/data/data.dart';
-import 'package:flutter_app3/main_page/widgets/catalog_widget.dart';
-import 'package:flutter_app3/main_page/widgets/head_widget.dart';
-import 'package:flutter_app3/main_page/widgets/products_widget.dart';
-import 'package:flutter_app3/main_page/widgets/set_discount_widget.dart';
-
+import '../data/data.dart';
+import 'widgets/catalog_widget.dart';
+import 'widgets/head_widget.dart';
+import 'widgets/products_widget.dart';
+import 'widgets/set_discount_widget.dart';
 import '../utils/colors/colors.dart';
 import 'widgets/find_product_widget.dart';
 
