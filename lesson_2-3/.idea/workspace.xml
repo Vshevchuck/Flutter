@@ -23,14 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed81e3c5-6e00-40a1-85c9-2c339ead3233" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flutter_app/lib/lib.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson_4/assets/weather_logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson_4/lib/app.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson_4/lib/login_page/login_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson_4/lib/main_page/main_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/app.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/amount_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_app/lib/main_page/widgets/amount_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_4/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson_4/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_4/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson_4/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_4/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson_4/test/widget_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
