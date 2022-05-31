@@ -27,3 +27,4 @@ flutter:
 
   assets:
     - assets/weather_logo.jpg
+    - assets/background_logo.jpg
