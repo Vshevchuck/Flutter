@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "271085088199",
+    "project_id": "flutter4lesson",
+    "storage_bucket": "flutter4lesson.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271085088199:android:9ea55af02784e852a2fde2",
+        "android_client_info": {
+          "package_name": "com.example.whe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271085088199-hj6a19vpb3d9c63jcop87kdcf18v5gqd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxAOpVqzQDduvlzCwuc8VtlrhC2hRl4zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271085088199-hj6a19vpb3d9c63jcop87kdcf18v5gqd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
