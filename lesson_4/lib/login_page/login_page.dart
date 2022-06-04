@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:whe/utils/text_styles/Texts_styles.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-class LoginPage extends StatelessWidget {
+final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     var screenHeight = (MediaQuery.of(context).size.height);
@@ -22,7 +30,7 @@ class LoginPage extends StatelessWidget {
             child: Container(
               height: screenHeight / 1.5,
               child: Column(
-                children: const [
+                children: [
                   Text(
                     'Welocme Back!',
                     style: TextsStyles.welcomeTextStyle,
@@ -36,7 +44,8 @@ class LoginPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 32.0),
                     child: TextField(
-                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300),
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white70),
                             hintText: 'username@gmail.com',
@@ -57,7 +66,8 @@ class LoginPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 32.0),
                     child: TextField(
-                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.w300),
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.w300),
                         obscureText: true,
                         decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white70),
@@ -74,7 +84,7 @@ class LoginPage extends StatelessWidget {
                               Icons.key,
                               color: Colors.white60,
                             ))),
-                  )
+                  ),GoogleSign(callBack: () => setState(() {}))
                 ],
               ),
             ),
@@ -82,5 +92,68 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     ));
+  }
+}
+
+class GoogleSign extends StatefulWidget {
+  final Function callBack;
+  const GoogleSign({Key? key,required this.callBack}) : super(key: key);
+
+  @override
+  State<GoogleSign> createState() => _GoogleSignState();
+}
+
+class _GoogleSignState extends State<GoogleSign> {
+  GoogleSignInAccount? _currentUser;
+
+  void initState() {
+    _googleSignIn.onCurrentUserChanged.listen((account) {
+      setState(() {
+        _currentUser = account;
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    GoogleSignInAccount? user = _currentUser;
+    if (user != null) {
+      return Column(children: [
+        ListTile(
+          leading: GoogleUserCircleAvatar(
+            identity: user,
+          ),
+          title: Text(user.displayName ?? ''),
+          subtitle: Text(user.email),
+        ),
+        const Text("Singed in successfully"),
+        ElevatedButton(
+          onPressed: singOut,
+          child: Text('Sign out'),
+        )
+      ]);
+    } else {
+      return Column(
+        children: [
+          Text('You are not singed in'),
+          ElevatedButton(onPressed: singIn, child: Text('Sing In'))
+        ],
+      );
+    }
+  }
+
+  void singOut() {
+    _googleSignIn.disconnect();
+    widget.callBack();
+  }
+
+  Future<void> singIn() async {
+    try{
+      await _googleSignIn.signIn();
+      widget.callBack();
+    }catch(e){
+      print('error sing in $e');
+    }
   }
 }
