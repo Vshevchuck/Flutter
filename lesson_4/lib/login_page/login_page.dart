@@ -31,18 +31,18 @@ class _LoginPageState extends State<LoginPage> {
               height: screenHeight / 1.5,
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'Welocme Back!',
                     style: TextsStyles.welcomeTextStyle,
                   ),
-                  SizedBox(height: 8),
-                  Text(
+                  const SizedBox(height: 8),
+                  const Text(
                     "Sign in to your profile",
                     style: TextsStyles.signInTestStyle,
                   ),
-                  SizedBox(height: 32.0),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                  const SizedBox(height: 32.0),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 32.0),
                     child: TextField(
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.w300),
@@ -63,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                             ))),
                   ),
                   SizedBox(height: 16.0),
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 32.0),
                     child: TextField(
                         style: TextStyle(
@@ -84,7 +84,11 @@ class _LoginPageState extends State<LoginPage> {
                               Icons.key,
                               color: Colors.white60,
                             ))),
-                  ),GoogleSign(callBack: () => setState(() {}))
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  GoogleSign(callBack: () => setState(() {}))
                 ],
               ),
             ),
@@ -97,7 +101,8 @@ class _LoginPageState extends State<LoginPage> {
 
 class GoogleSign extends StatefulWidget {
   final Function callBack;
-  const GoogleSign({Key? key,required this.callBack}) : super(key: key);
+
+  const GoogleSign({Key? key, required this.callBack}) : super(key: key);
 
   @override
   State<GoogleSign> createState() => _GoogleSignState();
@@ -127,17 +132,26 @@ class _GoogleSignState extends State<GoogleSign> {
           title: Text(user.displayName ?? ''),
           subtitle: Text(user.email),
         ),
-        const Text("Singed in successfully"),
+        const Text("Singed in successfully",style: TextStyle(color: Colors.white, fontSize: 20)),
         ElevatedButton(
           onPressed: singOut,
-          child: Text('Sign out'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white70,
+            ),
+          child: const Text('Sign out',style: TextStyle(color: Colors.black),)
         )
       ]);
     } else {
       return Column(
         children: [
-          Text('You are not singed in'),
-          ElevatedButton(onPressed: singIn, child: Text('Sing In'))
+          const Text('You are not singed in',
+              style: TextStyle(color: Colors.white, fontSize: 20)),
+          ElevatedButton(
+              onPressed: singIn,
+              style: ElevatedButton.styleFrom(
+                primary: Colors.white70,
+              ),
+              child: const Text('Google Sing In', style: TextStyle(color: Colors.black)))
         ],
       );
     }
@@ -149,10 +163,10 @@ class _GoogleSignState extends State<GoogleSign> {
   }
 
   Future<void> singIn() async {
-    try{
+    try {
       await _googleSignIn.signIn();
       widget.callBack();
-    }catch(e){
+    } catch (e) {
       print('error sing in $e');
     }
   }
