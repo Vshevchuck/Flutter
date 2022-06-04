@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: screenHeight / 1.5,
+              height: screenHeight / 1.2,
               child: Column(
                 children: [
                   const Text(
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.white, fontWeight: FontWeight.w300),
                         decoration: InputDecoration(
                             hintStyle: TextStyle(color: Colors.white70),
-                            hintText: 'username@gmail.com',
+                            hintText: 'Username',
                             enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     width: 2.0, color: Colors.white)),
@@ -88,6 +88,18 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 15,
                   ),
+                  ElevatedButton(
+                      onPressed: signInNoGoogle,
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white70,
+                      ),
+                      child: const Text(
+                        'Sign In',
+                        style: TextStyle(color: Colors.black),
+                      )),
+                  SizedBox(
+                    height: 15,
+                  ),
                   GoogleSign(callBack: () => setState(() {}))
                 ],
               ),
@@ -97,6 +109,10 @@ class _LoginPageState extends State<LoginPage> {
       ),
     ));
   }
+
+  void signInNoGoogle() {
+    Navigator.pushNamed(context, '/main');
+  }
 }
 
 class GoogleSign extends StatefulWidget {
@@ -105,16 +121,16 @@ class GoogleSign extends StatefulWidget {
   const GoogleSign({Key? key, required this.callBack}) : super(key: key);
 
   @override
-  State<GoogleSign> createState() => _GoogleSignState();
+  State<GoogleSign> createState() => GoogleSignState();
 }
 
-class _GoogleSignState extends State<GoogleSign> {
-  GoogleSignInAccount? _currentUser;
+class GoogleSignState extends State<GoogleSign> {
+  static GoogleSignInAccount? currentUser;
 
   void initState() {
     _googleSignIn.onCurrentUserChanged.listen((account) {
       setState(() {
-        _currentUser = account;
+        currentUser = account;
       });
     });
     super.initState();
@@ -122,36 +138,62 @@ class _GoogleSignState extends State<GoogleSign> {
 
   @override
   Widget build(BuildContext context) {
-    GoogleSignInAccount? user = _currentUser;
+    var screenWidth = (MediaQuery.of(context).size.width);
+    GoogleSignInAccount? user = currentUser;
     if (user != null) {
       return Column(children: [
-        ListTile(
-          leading: GoogleUserCircleAvatar(
-            identity: user,
-          ),
-          title: Text(user.displayName ?? ''),
-          subtitle: Text(user.email),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GoogleUserCircleAvatar(
+              identity: user,
+            ),
+            const SizedBox(width: 5),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(user.displayName ?? '',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18)),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(user.email,
+                    style: const TextStyle(
+                        color: Colors.white70,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15))
+              ],
+            )
+          ],
         ),
-        const Text("Singed in successfully",style: TextStyle(color: Colors.white, fontSize: 20)),
+        SizedBox(height: 10),
+        const Text("Singed in successfully",
+            style: TextStyle(color: Colors.white, fontSize: 16)),
         ElevatedButton(
-          onPressed: singOut,
+            onPressed: singOut,
             style: ElevatedButton.styleFrom(
               primary: Colors.white70,
             ),
-          child: const Text('Sign out',style: TextStyle(color: Colors.black),)
-        )
+            child: const Text(
+              'Sign out',
+              style: TextStyle(color: Colors.black),
+            ))
       ]);
     } else {
       return Column(
         children: [
-          const Text('You are not singed in',
-              style: TextStyle(color: Colors.white, fontSize: 20)),
+          const Text('You are not singed in Google account',
+              style: TextStyle(color: Colors.white, fontSize: 16)),
           ElevatedButton(
               onPressed: singIn,
               style: ElevatedButton.styleFrom(
                 primary: Colors.white70,
               ),
-              child: const Text('Google Sing In', style: TextStyle(color: Colors.black)))
+              child: const Text('Google Sing In',
+                  style: TextStyle(color: Colors.black)))
         ],
       );
     }
