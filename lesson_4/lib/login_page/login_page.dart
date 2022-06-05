@@ -169,7 +169,7 @@ class GoogleSignState extends State<GoogleSign> {
             )
           ],
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         const Text("Singed in successfully",
             style: TextStyle(color: Colors.white, fontSize: 16)),
         ElevatedButton(
